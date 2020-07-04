@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eff776c4-d688-46d4-8a78-0d8f85a2bddf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="SCSS File" />
+        <option value="package.json" />
+        <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1586978920" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="dPvrqwSp" />
+  </component>
+  <component name="ProjectId" id="1U1PgtRUBOTxgRGQgJR0a4le1gk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;mariadb&#10;snowflake&#10;mongo" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;JSON" />
+    <property name="database.data.extractors.current.id" value="CSV-Groovy.csv.groovy" />
+    <property name="last.edited.regexp" value="Some/Thing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v12.16.0/bin/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/modules/database" />
+      <recent name="$PROJECT_DIR$/src/discord" />
+      <recent name="$PROJECT_DIR$/packages/core/src" />
+      <recent name="$PROJECT_DIR$/packages/music" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/modules/database/commands" />
+      <recent name="$PROJECT_DIR$/src/database" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/packages/admin-interface/src/moduleConfigArea" />
+      <recent name="$PROJECT_DIR$/packages/common/src/config/schema" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.Compose">
+    <configuration name="scratch_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="discotheque" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.mongo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mongo" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Compose" />
+      <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
+      <item itemvalue="Python.scratch_3" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
+        <item itemvalue="Python.scratch_3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eff776c4-d688-46d4-8a78-0d8f85a2bddf" name="Default Changelist" comment="" />
+      <created>1574521242794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574521242794</updated>
+      <workItem from="1574521244617" duration="1001000" />
+      <workItem from="1574705451441" duration="14233000" />
+      <workItem from="1574792073774" duration="14418000" />
+      <workItem from="1574881719858" duration="436000" />
+      <workItem from="1574882170436" duration="14126000" />
+      <workItem from="1574964990126" duration="14677000" />
+      <workItem from="1575054442227" duration="13300000" />
+      <workItem from="1575120099497" duration="26072000" />
+      <workItem from="1575204365962" duration="1958000" />
+      <workItem from="1576411562782" duration="1908000" />
+      <workItem from="1576434078664" duration="7000" />
+      <workItem from="1578849051515" duration="1951000" />
+      <workItem from="1579040025950" duration="661000" />
+      <workItem from="1579119077061" duration="607000" />
+      <workItem from="1580414308207" duration="6721000" />
+      <workItem from="1580505679001" duration="13000" />
+      <workItem from="1580505703818" duration="8094000" />
+      <workItem from="1580560087251" duration="617000" />
+      <workItem from="1580934848883" duration="40000" />
+      <workItem from="1580934902770" duration="9946000" />
+      <workItem from="1581019220655" duration="2232000" />
+      <workItem from="1581163030179" duration="5706000" />
+      <workItem from="1581368340883" duration="1352000" />
+      <workItem from="1581533584482" duration="34000" />
+      <workItem from="1583072057706" duration="623000" />
+      <workItem from="1584645103167" duration="2486000" />
+      <workItem from="1585589568358" duration="2714000" />
+      <workItem from="1585642294884" duration="85000" />
+      <workItem from="1585675737271" duration="8058000" />
+      <workItem from="1585728198769" duration="5470000" />
+      <workItem from="1586453509047" duration="11901000" />
+      <workItem from="1586513939012" duration="6000" />
+      <workItem from="1586513955336" duration="33372000" />
+      <workItem from="1586604740075" duration="36903000" />
+      <workItem from="1586693763924" duration="19158000" />
+      <workItem from="1586777014707" duration="25139000" />
+      <workItem from="1586851509179" duration="1991000" />
+      <workItem from="1586937062575" duration="5881000" />
+      <workItem from="1586988497565" duration="1412000" />
+      <workItem from="1587023141163" duration="2385000" />
+      <workItem from="1587053522537" duration="2300000" />
+      <workItem from="1587110959011" duration="24528000" />
+      <workItem from="1587212502716" duration="5871000" />
+      <workItem from="1587219582743" duration="1638000" />
+      <workItem from="1587221265529" duration="5057000" />
+      <workItem from="1587297378664" duration="12492000" />
+      <workItem from="1587373230672" duration="381000" />
+      <workItem from="1587394334391" duration="11684000" />
+      <workItem from="1587456968975" duration="9054000" />
+      <workItem from="1587503145869" duration="610000" />
+      <workItem from="1587546099518" duration="1212000" />
+      <workItem from="1587593975779" duration="833000" />
+      <workItem from="1587628503850" duration="604000" />
+      <workItem from="1587719773124" duration="128000" />
+      <workItem from="1587721234076" duration="1508000" />
+      <workItem from="1587901380567" duration="649000" />
+      <workItem from="1587973606423" duration="1221000" />
+      <workItem from="1588007244061" duration="602000" />
+      <workItem from="1588062583486" duration="2436000" />
+      <workItem from="1588151327698" duration="3355000" />
+      <workItem from="1588234793310" duration="603000" />
+      <workItem from="1588321058341" duration="604000" />
+      <workItem from="1588445061340" duration="6902000" />
+      <workItem from="1588500113085" duration="4440000" />
+      <workItem from="1588594004270" duration="6000" />
+      <workItem from="1588594021372" duration="3275000" />
+      <workItem from="1588606573366" duration="14329000" />
+      <workItem from="1588666337864" duration="14198000" />
+      <workItem from="1588756237962" duration="18950000" />
+      <workItem from="1588840074012" duration="1338000" />
+      <workItem from="1588861774526" duration="5780000" />
+      <workItem from="1588932089563" duration="2578000" />
+      <workItem from="1589020447559" duration="607000" />
+      <workItem from="1589029066860" duration="1517000" />
+      <workItem from="1589749838379" duration="600000" />
+      <workItem from="1589789272343" duration="8000" />
+      <workItem from="1589838617442" duration="225000" />
+      <workItem from="1589838866908" duration="500000" />
+      <workItem from="1589896696232" duration="616000" />
+      <workItem from="1590422241323" duration="1827000" />
+      <workItem from="1590484560321" duration="10000" />
+      <workItem from="1590571280483" duration="1861000" />
+      <workItem from="1591907945570" duration="706000" />
+      <workItem from="1592316495535" duration="973000" />
+      <workItem from="1593623590345" duration="457000" />
+      <workItem from="1593624171357" duration="1342000" />
+      <workItem from="1593630114147" duration="168000" />
+      <workItem from="1593630641330" duration="839000" />
+      <workItem from="1593634242343" duration="7431000" />
+      <workItem from="1593690082620" duration="9528000" />
+      <workItem from="1593724277938" duration="5460000" />
+      <workItem from="1593775974833" duration="14739000" />
+      <workItem from="1593868056277" duration="9440000" />
+    </task>
+    <task id="LOCAL-00001" summary="update gitignore">
+      <created>1574705726964</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574705726964</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update vcs settings">
+      <created>1574705732854</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574705732854</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add run configurations">
+      <created>1574811338758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811338758</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add run configurations">
+      <created>1574811358175</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811358175</updated>
+    </task>
+    <task id="LOCAL-00005" summary="run wss on separate port">
+      <created>1574811383254</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811383254</updated>
+    </task>
+    <task id="LOCAL-00006" summary="use object, add ability to cull">
+      <created>1574811405390</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811405390</updated>
+    </task>
+    <task id="LOCAL-00007" summary="different routing for deployment">
+      <created>1574811436659</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811436659</updated>
+    </task>
+    <task id="LOCAL-00008" summary="z-index fixes, character labels, mouse tracking">
+      <created>1574811488858</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811488858</updated>
+    </task>
+    <task id="LOCAL-00009" summary="collision check characters">
+      <created>1574811513279</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811513279</updated>
+    </task>
+    <task id="LOCAL-00010" summary="draw box around character label">
+      <created>1574811886055</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574811886055</updated>
+    </task>
+    <task id="LOCAL-00011" summary="chore: enable show all errors">
+      <created>1574982877058</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574982877058</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: add markov strings, node-fetch">
+      <created>1574982974828</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574982974828</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: update ignored files">
+      <created>1574983152379</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983152379</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix(database): mariadb timezone warning">
+      <created>1574983249024</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983249024</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat(server): generate and cache markov chains for each user">
+      <created>1574983398419</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983398419</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat(server): ensure webhooks for each text channel">
+      <created>1574983423582</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983423582</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat(bot): mimic command">
+      <created>1574983448087</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983448087</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat(websocket server): character mimic&#10;&#10;currently hard-coded as me.">
+      <created>1574983508034</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983508034</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat(server): load markov chains and websockets on startup">
+      <created>1574983522108</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983522108</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat(client): animated movement, better input, press m to mimic&#10;&#10;bored of proper commiting now">
+      <created>1574983583739</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983583739</updated>
+    </task>
+    <task id="LOCAL-00021" summary="chore(client): add tsconfig">
+      <created>1574983591006</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983591006</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: shade mouse hover and do not shade hovered walls">
+      <created>1574983896909</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574983896909</updated>
+    </task>
+    <task id="LOCAL-00023" summary="set intellij code style">
+      <created>1580505884039</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1580505884039</updated>
+    </task>
+    <task id="LOCAL-00024" summary="change client typescript config">
+      <created>1580505905308</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1580505905308</updated>
+    </task>
+    <task id="LOCAL-00025" summary="jiggle stuff around and use binary for websocket data">
+      <created>1580505983138</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1580505983138</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add help to commands, a few new commands">
+      <created>1580506082395</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506082395</updated>
+    </task>
+    <task id="LOCAL-00027" summary="set page title">
+      <created>1580506090291</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506090291</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add between function">
+      <created>1580506101228</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506101228</updated>
+    </task>
+    <task id="LOCAL-00029" summary="use new webhook class">
+      <created>1580506116052</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506116052</updated>
+    </task>
+    <task id="LOCAL-00030" summary="add ability to regenerate chain, couple of fixes">
+      <created>1580506142890</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506142890</updated>
+    </task>
+    <task id="LOCAL-00031" summary="talk from discord also lots of changes and fixes&#10;&#10;committing things is very boring">
+      <created>1580506166945</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1580506166945</updated>
+    </task>
+    <task id="LOCAL-00032" summary="restructure everything to use yarn workspaces and a common package&#10;&#10;things shared between client and server will slowly work their way into the common package.">
+      <created>1580511054903</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1580511054903</updated>
+    </task>
+    <task id="LOCAL-00033" summary="write short readme">
+      <created>1580511410851</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1580511410851</updated>
+    </task>
+    <task id="LOCAL-00034" summary="rewrite map generation and rendering to use binary dictionary format.&#10;&#10;Reduces map size 2x, allows for better z-index handling.&#10;Possibly opens the door to greater efficiency but need to optimise first.">
+      <created>1580943736957</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1580943736957</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix intellij still referencing wrong project">
+      <created>1580943752000</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1580943752000</updated>
+    </task>
+    <task id="LOCAL-00036" summary="tidy up chatbox code">
+      <created>1581026313600</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1581026313600</updated>
+    </task>
+    <task id="LOCAL-00037" summary="blur chatbox on message send">
+      <created>1581026340538</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1581026340538</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="chore: update ignored files" />
+    <MESSAGE value="fix(database): mariadb timezone warning" />
+    <MESSAGE value="feat(server): generate and cache markov chains for each user" />
+    <MESSAGE value="feat(server): ensure webhooks for each text channel" />
+    <MESSAGE value="feat(bot): mimic command" />
+    <MESSAGE value="feat(websocket server): character mimic&#10;&#10;currently hard-coded as me." />
+    <MESSAGE value="feat(server): load markov chains and websockets on startup" />
+    <MESSAGE value="feat(client): animated movement, better input, press m to mimic&#10;&#10;bored of proper commiting now" />
+    <MESSAGE value="chore(client): add tsconfig" />
+    <MESSAGE value="feat: shade mouse hover and do not shade hovered walls" />
+    <MESSAGE value="set intellij code style" />
+    <MESSAGE value="change client typescript config" />
+    <MESSAGE value="jiggle stuff around and use binary for websocket data" />
+    <MESSAGE value="add help to commands, a few new commands" />
+    <MESSAGE value="set page title" />
+    <MESSAGE value="add between function" />
+    <MESSAGE value="use new webhook class" />
+    <MESSAGE value="add ability to regenerate chain, couple of fixes" />
+    <MESSAGE value="talk from discord also lots of changes and fixes&#10;&#10;committing things is very boring" />
+    <MESSAGE value="restructure everything to use yarn workspaces and a common package&#10;&#10;things shared between client and server will slowly work their way into the common package." />
+    <MESSAGE value="write short readme" />
+    <MESSAGE value="rewrite map generation and rendering to use binary dictionary format.&#10;&#10;Reduces map size 2x, allows for better z-index handling.&#10;Possibly opens the door to greater efficiency but need to optimise first." />
+    <MESSAGE value="fix intellij still referencing wrong project" />
+    <MESSAGE value="tidy up chatbox code" />
+    <MESSAGE value="blur chatbox on message send" />
+    <option name="LAST_COMMIT_MESSAGE" value="blur chatbox on message send" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2862" y="384" width="666" height="629" key="#Build_Discworld" timestamp="1587157439211">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2862" y="384" width="666" height="629" key="#Build_Discworld/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1587157439211" />
+    <state x="2853" y="223" width="684" height="952" key="#Dockerfile" timestamp="1593690098146">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2853" y="223" width="684" height="952" key="#Dockerfile/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593690098146" />
+    <state x="3046" y="611" width="298" height="176" key="#ESLint" timestamp="1588716113293">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3046" y="611" width="298" height="176" key="#ESLint/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588716113293" />
+    <state x="3076" y="614" width="237" height="169" key="#Environment_variables" timestamp="1593641383366">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3076" y="614" width="237" height="169" key="#Environment_variables/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593641383366" />
+    <state x="2795" y="344" width="800" height="710" key="#Plugins" timestamp="1588151637459">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="344" width="800" height="710" key="#Plugins/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588151637459" />
+    <state x="2862" y="384" width="676" height="631" key="#Start_Server" timestamp="1588792997235">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2862" y="384" width="676" height="631" key="#Start_Server/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588792997235" />
+    <state x="2935" y="589" width="661" height="220" key="#Stylelint" timestamp="1586548396209">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2935" y="589" width="661" height="220" key="#Stylelint/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586548396209" />
+    <state x="3046" y="599" width="298" height="200" key="#Volume_binding" timestamp="1593640923846">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3046" y="599" width="298" height="200" key="#Volume_binding/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593640923846" />
+    <state x="2854" y="419" width="992" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593724326244">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2854" y="419" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593724326244" />
+    <state x="2854" y="419" width="992" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593722317081" />
+    <state x="2911" y="502" width="651" height="392" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593640711604">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2911" y="502" width="568" height="394" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588715721880" />
+    <state x="2911" y="502" width="651" height="392" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593640711604" />
+    <state x="3008" y="419" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1593905879514">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3008" y="419" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588800566630" />
+    <state x="3008" y="419" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593905879514" />
+    <state x="2020" y="100" width="2360" height="1200" key="DiffContextDialog" timestamp="1588794330225">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2020" y="100" width="2360" height="1200" key="DiffContextDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588794330225" />
+    <state x="3191" y="644" width="307" height="222" key="DockerComposeFileDialog" timestamp="1593639243520">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3191" y="644" width="307" height="222" key="DockerComposeFileDialog/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593639243520" />
+    <state x="2983" y="458" width="424" height="482" key="FileChooserDialogImpl" timestamp="1593640920692">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2983" y="458" width="424" height="482" key="FileChooserDialogImpl/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588792986603" />
+    <state x="2983" y="458" width="424" height="482" key="FileChooserDialogImpl/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593640920692" />
+    <state width="1736" height="360" key="GridCell.Tab.0.bottom" timestamp="1593728312906">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1736" height="360" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593728312906" />
+    <state width="2510" height="372" key="GridCell.Tab.0.bottom/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593724259241" />
+    <state width="1736" height="360" key="GridCell.Tab.0.center" timestamp="1593728312906">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1736" height="360" key="GridCell.Tab.0.center/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593728312906" />
+    <state width="2510" height="372" key="GridCell.Tab.0.center/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593724259241" />
+    <state width="1736" height="360" key="GridCell.Tab.0.left" timestamp="1593728312905">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1736" height="360" key="GridCell.Tab.0.left/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593728312905" />
+    <state width="2510" height="372" key="GridCell.Tab.0.left/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593724259241" />
+    <state width="1736" height="360" key="GridCell.Tab.0.right" timestamp="1593728312906">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1736" height="360" key="GridCell.Tab.0.right/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593728312906" />
+    <state width="2510" height="372" key="GridCell.Tab.0.right/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593724259241" />
+    <state width="2514" height="482" key="GridCell.Tab.1.bottom" timestamp="1588113786725">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.1.bottom/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786725" />
+    <state width="2514" height="482" key="GridCell.Tab.1.center" timestamp="1588113786725">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.1.center/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786725" />
+    <state width="2514" height="482" key="GridCell.Tab.1.left" timestamp="1588113786725">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.1.left/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786725" />
+    <state width="2514" height="482" key="GridCell.Tab.1.right" timestamp="1588113786725">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.1.right/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786725" />
+    <state width="2514" height="482" key="GridCell.Tab.2.bottom" timestamp="1588113786727">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.2.bottom/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786727" />
+    <state width="2514" height="482" key="GridCell.Tab.2.center" timestamp="1588113786726">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.2.center/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786726" />
+    <state width="2514" height="482" key="GridCell.Tab.2.left" timestamp="1588113786726">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.2.left/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786726" />
+    <state width="2514" height="482" key="GridCell.Tab.2.right" timestamp="1588113786726">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="482" key="GridCell.Tab.2.right/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588113786726" />
+    <state width="264" height="563" key="HiddenNamespacesPopup" timestamp="1593723916227">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="264" height="563" key="HiddenNamespacesPopup/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593723916227" />
+    <state x="2689" y="335" key="SettingsEditor" timestamp="1593718265239">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2689" y="335" key="SettingsEditor/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1589054176678" />
+    <state x="2689" y="335" key="SettingsEditor/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593718265239" />
+    <state x="3048" y="473" width="367" height="448" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1586464529654">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3048" y="473" width="367" height="448" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586464529653" />
+    <state x="1920" y="0" width="2550" height="1400" key="com.intellij.database.run.actions.ShowCsvFormatsAction$ForExport" timestamp="1587394648908">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1920" y="0" width="2550" height="1400" key="com.intellij.database.run.actions.ShowCsvFormatsAction$ForExport/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1587394648908" />
+    <state x="2731" y="356" width="636" height="686" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1586457146731">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2731" y="356" width="636" height="686" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586457146731" />
+    <state x="2723" y="296" width="1014" height="805" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586780694236">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2723" y="296" width="1014" height="805" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586780694236" />
+    <state x="2971" y="615" width="448" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586526872460">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2971" y="615" width="448" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586526872460" />
+    <state x="2728" y="412" width="934" height="574" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586612642710">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2728" y="412" width="934" height="574" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586612642710" />
+    <state x="2635" y="336" width="1548" height="849" key="dock-window-1" timestamp="1593904643558">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2635" y="336" width="1548" height="849" key="dock-window-1/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593904643558" />
+    <state x="2464" y="379" width="824" height="760" key="find.popup" timestamp="1593811430818">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="4888" y="644" width="618" height="570" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1588797659050" />
+    <state x="2464" y="379" width="824" height="760" key="find.popup/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593811430818" />
+    <state x="2863" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1593813839979">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2863" y="319" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1593728088488" />
+    <state x="2863" y="319" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/4480.360.1920.1080/0.360.1920.1080@1920.0.2560.1440" timestamp="1593813839979" />
+    <state x="2925" y="592" width="540" height="214" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586612624508">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2925" y="592" width="540" height="214" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1586612624508" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/discotheque$scratch_3.coverage" NAME="scratch_3 Coverage Results" MODIFIED="1587396195917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+  </component>
+</project>

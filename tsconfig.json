@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "target": "ES2018",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "lib": [
+      "esnext"
+    ],
+    "outDir": "./lib"
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+   "**/node_modules",
+   "**/*.spec.ts"
+ ]
+}

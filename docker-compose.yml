@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  node:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${EXPRESS_PORT}:${EXPRESS_PORT}
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+
+  mongo-express:
+    image: mongo-express
+    depends_on:
+      - mongo
+    ports:
+      - 8888:8081
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongo-data:
+  redis-data:
