@@ -91,7 +91,7 @@ class Sync extends Command {
       .fetch({ before: msg.id, limit: 100 })
       .catch(Sync.error);
 
-    if (messages) {
+    if (messages && messages.size) {
       const messageHandler = MessageHandler.get();
 
       await messageHandler.writeMessages(messages.array());
