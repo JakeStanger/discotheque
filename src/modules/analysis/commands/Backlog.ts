@@ -94,7 +94,8 @@ class Backlog extends Command {
           concepts: {},
           entities: {},
           keywords: {}
-        }
+        },
+        language: 'en'
       })
       .then(res => res.result)
       .catch(console.error);
