@@ -38,7 +38,7 @@ class Backlog extends Command {
     }
 
     const fiveMinutesAgo = DateTime.local()
-      .minus({ minutes: 50 })
+      .minus({ minutes: 5 })
       .toJSDate();
 
     const botMessage = await DiscordUtils.sendOngoing(
