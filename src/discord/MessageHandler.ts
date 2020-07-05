@@ -44,14 +44,14 @@ class MessageHandler extends Logger {
       if (guild.logMessages && !isCommand) {
         await this.writeMessage(message);
       } else if (isCommand) {
-        const commandName = message.content
-          .split(' ')[0]
-          .substring(prefix.length);
+        const [commandName, ...args] = message.content
+          .substring(prefix.length)
+          .split(' ');
 
         const command = Command.getCommand(commandName);
 
         if (command) {
-          await command.run(message);
+          await command.run(message, ...args);
         }
       }
     }
