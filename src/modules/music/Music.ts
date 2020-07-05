@@ -70,7 +70,7 @@ class Music extends Module {
   }
 
   public getDescription(): string {
-    return 'Commands for playing audio in voice channels';
+    return 'Commands for playing audio in voice channels.';
   }
 
   public getLink(): string | undefined {
