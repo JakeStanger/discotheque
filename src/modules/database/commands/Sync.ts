@@ -135,7 +135,7 @@ class Sync extends Command {
   }
 
   public getDescription(): string {
-    return 'Syncs all messages in all channels';
+    return 'Syncs all messages in all channels.';
   }
 
   public getName(): string {
