@@ -10,7 +10,7 @@ const collections: ICollection[] = [
   {
     name: 'messages',
     indexes: [
-      { key: { id: 1 }, unique: true },
+      { key: { id: -1 }, unique: true },
       { key: { authorId: 1 } },
       { key: { channelId: 1 } },
       { key: { guildId: 1 } }
