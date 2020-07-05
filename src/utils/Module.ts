@@ -7,7 +7,7 @@ abstract class Module {
 
   public addCommands(commands: (new (...args: any[]) => Command)[]) {
     commands.forEach(command => {
-      const commandInstance = new command();
+      const commandInstance = new command(this);
       Log.get(this.getName()).log(
         `Added command ${kleur.red(commandInstance.getName())}`
       );
