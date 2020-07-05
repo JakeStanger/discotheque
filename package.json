@@ -5,6 +5,9 @@
   "author": "Jake Stanger",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "node lib/index.js",
     "start:dev": "nodemon"
   },
   "dependencies": {
