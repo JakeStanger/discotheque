@@ -58,32 +58,48 @@ class MessageHandler extends Logger {
   }
 
   public async writeMessage(message: Message) {
-    await this.collection.findOneAndUpdate(
+    await this.collection.updateOne(
       { id: message.id },
       {
-        $setOnInsert: {
-          id: message.id,
-          content: message.content,
-          authorId: message.author.id,
-          channelId: message.channel.id,
-          guildId: message.guild?.id,
-          timestamp: message.createdTimestamp, // TODO: Use date!
-          attachments: message.attachments.map(attachment => ({
-            id: attachment.id,
-            fileName: attachment.name,
-            fileSize: attachment.size,
-            width: attachment.width || undefined,
-            height: attachment.height || undefined,
-            url: attachment.url
-          }))
-        }
+        $set: this.getMessageDocument(message)
       },
-      { returnOriginal: true, upsert: true }
+      { upsert: true }
     );
+  }
+
+  public async writeMessages(messages: Message[]) {
+    const bulk = this.collection.initializeUnorderedBulkOp();
+    messages.forEach(message =>
+      bulk
+        .find({ id: message.id })
+        .upsert()
+        .update({ $set: this.getMessageDocument(message) })
+    );
+
+    await bulk.execute();
   }
 
   public async onMessageDelete(message: Message | PartialMessage) {
     await this.collection.deleteOne({ id: message.id });
+  }
+
+  private getMessageDocument(message: Message) {
+    return {
+      id: message.id,
+      content: message.content,
+      authorId: message.author.id,
+      channelId: message.channel.id,
+      guildId: message.guild?.id,
+      timestamp: message.createdTimestamp, // TODO: Use date!
+      attachments: message.attachments.map(attachment => ({
+        id: attachment.id,
+        fileName: attachment.name,
+        fileSize: attachment.size,
+        width: attachment.width || undefined,
+        height: attachment.height || undefined,
+        url: attachment.url
+      }))
+    };
   }
 }
 

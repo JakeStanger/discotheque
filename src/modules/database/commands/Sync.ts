@@ -1,5 +1,11 @@
 import { DateTime } from 'luxon';
-import { Message, MessageEmbedOptions, TextChannel } from 'discord.js';
+import {
+  Collection,
+  EmbedFieldData,
+  Message,
+  MessageEmbedOptions,
+  TextChannel
+} from 'discord.js';
 import * as kleur from 'kleur';
 import MessageHandler from '../../../discord/MessageHandler';
 import Command from '../../../utils/Command';
@@ -7,6 +13,8 @@ import Module from '../../../utils/Module';
 
 class Sync extends Command {
   private msgCount = 0;
+  private channelMsgCount = 0;
+
   private prevMonth = '';
   private syncInProgress = false;
 
@@ -20,72 +28,108 @@ class Sync extends Command {
     this.msgCount = 0;
 
     const statusMessage: Message = (await msg.reply('', {
-      embed: this.getEmbed(msg)
+      embed: this.getEmbed(msg, '[STARTING]')
     })) as Message;
 
-    this.prevMonth = DateTime.fromMillis(msg.createdTimestamp).toFormat(
-      'yyyy-MM'
-    );
+    const channels: Collection<string, TextChannel> =
+      (msg.guild?.channels.cache.filter(c => c.type === 'text') as Collection<
+        string,
+        TextChannel
+      >) || [];
 
-    await this.getNextMessageSet(msg, statusMessage);
+    for (const [channelId, channel] of channels) {
+      this.channelMsgCount = 0;
+
+      const lastMessage =
+        channel.lastMessage ||
+        (await channel.messages.fetch({ limit: 1 }).then(m => m.first()));
+
+      if (!lastMessage) continue;
+
+      this.prevMonth = DateTime.fromMillis(
+        lastMessage.createdTimestamp
+      ).toFormat('yyyy-MM');
+
+      await this.getNextMessageSet(lastMessage, statusMessage, channel);
+    }
 
     Sync.log(kleur.green('Sync complete'));
 
-    await statusMessage.edit('', { embed: this.getEmbed(msg, false) });
+    await statusMessage.edit('', {
+      embed: this.getEmbed(msg, '[FINISHED]', false)
+    });
     this.syncInProgress = false;
   }
 
-  private async getNextMessageSet(msg: Message, statusMessage: Message) {
+  private async getNextMessageSet(
+    msg: Message,
+    statusMessage: Message,
+    channel: TextChannel
+  ) {
     Sync.log(
       `Fetching before ${kleur.cyan(
         DateTime.fromMillis(msg.createdTimestamp).toISO()
-      )}`,
+      )} in ${kleur.blue(channel.name)}`,
+      kleur.magenta(this.channelMsgCount),
       kleur.magenta(this.msgCount)
     );
 
     if (
       DateTime.fromMillis(msg.createdTimestamp).toFormat('yyyy-MM') !=
       this.prevMonth
-    )
+    ) {
       await statusMessage
-        .edit('', { embed: this.getEmbed(msg) })
+        .edit('', { embed: this.getEmbed(msg, channel.name) })
         .catch(Sync.error);
+    }
+
     this.prevMonth = DateTime.fromMillis(msg.createdTimestamp).toFormat(
       'yyyy-MM'
     );
 
     const messages = await msg.channel.messages
-      .fetch({ before: msg.id })
+      .fetch({ before: msg.id, limit: 100 })
       .catch(Sync.error);
+
     if (messages) {
       const messageHandler = MessageHandler.get();
-      await Promise.all(
-        messages.map(
-          msg =>
-            new Promise(resolve =>
-              messageHandler
-                .writeMessage(msg)
-                .then(() => this.msgCount++)
-                .then(resolve)
-            )
-        )
-      );
+
+      await messageHandler.writeMessages(messages.array());
+      this.msgCount += messages.size;
+      this.channelMsgCount += messages.size;
 
       const last = messages.last();
       if (last && last.id !== msg.id) {
-        await this.getNextMessageSet(last, statusMessage);
+        await this.getNextMessageSet(last, statusMessage, channel);
       }
     }
   }
 
-  private getEmbed(msg: Message, progress = true): MessageEmbedOptions {
+  private getEmbed(
+    msg: Message,
+    channelName: string,
+    progress = true
+  ): MessageEmbedOptions {
     return {
       title: progress ? 'Syncing' : 'Sync complete',
-      description: `Current: **${
-        progress
-          ? DateTime.fromMillis(msg.createdTimestamp).toFormat('yyyy-MM')
-          : this.prevMonth
-      }**\nMessage count: **${this.msgCount}**`,
+      fields: [
+        progress && {
+          name: 'Channel',
+          value: channelName
+        },
+        progress && {
+          name: 'Scan Date',
+          value: DateTime.fromMillis(msg.createdTimestamp).toFormat('yyyy-MM')
+        },
+        {
+          name: 'Channel Count',
+          value: this.channelMsgCount
+        },
+        {
+          name: 'Total Count',
+          value: this.msgCount
+        }
+      ].filter(p => p) as EmbedFieldData[],
       color: progress ? 0xffbf00 : 0x6eff64
     };
   }
