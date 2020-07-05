@@ -1,6 +1,6 @@
-import { MongoClient, Db } from 'mongodb';
+import { MongoClient, Db, MongoError } from 'mongodb';
 import { Logger } from '../utils/Logger';
-import collections from './Collections';
+import collections, { ICollection } from './Collections';
 
 class Database extends Logger {
   private static instance: Database;
@@ -19,6 +19,8 @@ class Database extends Logger {
   private constructor() {
     super();
     Database.instance = this;
+
+    this.ensureCollection = this.ensureCollection.bind(this);
   }
 
   public static get() {
@@ -29,16 +31,25 @@ class Database extends Logger {
     const client = new MongoClient(url, { useUnifiedTopology: true });
     await client.connect();
 
+    Database.log('Connected to database');
+
     const db = client.db(database);
 
     this._client = client;
     this._db = db;
 
-    await Promise.all(
-      collections.map(collection => db.createCollection(collection))
-    );
+    await Promise.all(collections.map(this.ensureCollection));
 
-    Database.log('Connected to database');
+    Database.log('Collections configured');
+  }
+
+  private async ensureCollection(collection: ICollection) {
+    const dbCollection = await this.db.createCollection(collection.name);
+    await dbCollection
+      .createIndexes(collection.indexes)
+      .catch((err: MongoError) => {
+        console.error(err);
+      });
   }
 }
 
