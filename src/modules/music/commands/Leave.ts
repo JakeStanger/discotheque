@@ -2,21 +2,18 @@ import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 import { Message } from 'discord.js';
 import Music from '../Music';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Leave extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Leaves the current voice channel.';
-  }
-
-  public getName(): string {
-    return 'leave';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'leave',
+      description: 'Leaves the current voice channel.'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

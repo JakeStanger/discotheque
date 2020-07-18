@@ -10,11 +10,9 @@ import * as kleur from 'kleur';
 import MessageHandler from '../../../discord/MessageHandler';
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Sync extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   private msgCount = 0;
   private channelMsgCount = 0;
 
@@ -23,6 +21,14 @@ class Sync extends Command {
 
   constructor(module: Module) {
     super(module);
+  }
+
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'sync',
+      description: 'Syncs all messages in all channels.',
+      admin: true
+    };
   }
 
   public async doSync(msg: Message) {
@@ -135,14 +141,6 @@ class Sync extends Command {
       ].filter(p => p) as EmbedFieldData[],
       color: progress ? 0xffbf00 : 0x6eff64
     };
-  }
-
-  public getDescription(): string {
-    return 'Syncs all messages in all channels.';
-  }
-
-  public getName(): string {
-    return 'sync';
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

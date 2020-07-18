@@ -4,21 +4,18 @@ import Module from '../../../utils/Module';
 import ModuleRegistry from '../../../registries/ModuleRegistry';
 import DiscordUtils from '../../../discord/DiscordUtils';
 import GuildManager from '../../../database/GuildManager';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Modules extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Shows a list of enabled modules.';
-  }
-
-  public getName(): string {
-    return 'modules';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'modules',
+      description: 'Shows a list of enabled modules.'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

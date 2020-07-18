@@ -1,21 +1,18 @@
 import Command from '../../../utils/Command';
 import { Message } from 'discord.js';
 import Music from '../Music';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Join extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Music) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Joins your current voice channel.';
-  }
-
-  public getName(): string {
-    return 'join';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'join',
+      description: 'Joins your current voice channel.'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

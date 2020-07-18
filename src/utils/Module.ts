@@ -10,9 +10,9 @@ abstract class Module {
     commands.forEach(command => {
       const commandInstance = new command(this);
       Log.get(this.getName()).log(
-        `Added command ${kleur.red(commandInstance.getName())}`
+        `Added command ${kleur.red(commandInstance.name)}`
       );
-      this.commands[commandInstance.getName()] = commandInstance;
+      this.commands[commandInstance.name] = commandInstance;
     });
   }
 

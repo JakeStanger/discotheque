@@ -6,21 +6,19 @@ import DiscordUtils from '../../../discord/DiscordUtils';
 import IGuild, { Guild } from '../../../database/schema/IGuild';
 import ModuleRegistry from '../../../registries/ModuleRegistry';
 import { Document } from 'mongoose';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Configure extends Command {
-  public readonly admin = true;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Configure bot settings.';
-  }
-
-  public getName(): string {
-    return 'configure';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'configure',
+      description: 'Configure bot settings.',
+      admin: true
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

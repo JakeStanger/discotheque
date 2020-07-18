@@ -2,21 +2,18 @@ import Command from '../../../utils/Command';
 import { Message, MessageEmbed, TextChannel } from 'discord.js';
 import Module from '../../../utils/Module';
 import GuildManager from '../../../database/GuildManager';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class ReactPin extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Pins a message';
-  }
-
-  public getName(): string {
-    return 'react:pushpin'; // TODO: Make configurable
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'react:pushpin',
+      description: 'Pins a message'
+    };
   }
 
   public async run(message: Message, identifier: string): Promise<void> {

@@ -3,13 +3,18 @@ import Module from '../../../utils/Module';
 import { Message, TextChannel } from 'discord.js';
 import DiscordUtils from '../../../discord/DiscordUtils';
 import GuildManager from '../../../database/GuildManager';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Help extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
+  }
+
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'help',
+      description: 'Shows this help.'
+    };
   }
 
   public getName(): string {
@@ -40,15 +45,11 @@ class Help extends Command {
       embed: {
         title: 'Help',
         fields: commands.map(command => ({
-          name: command.getName(),
-          value: command.getDescription() || '-'
+          name: command.name,
+          value: command.description || '-'
         }))
       }
     });
-  }
-
-  public getDescription(): string {
-    return 'Shows this help.';
   }
 }
 

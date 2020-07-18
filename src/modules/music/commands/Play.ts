@@ -5,21 +5,18 @@ import * as ytdl from 'ytdl-core';
 import * as youtubeSearch from 'youtube-search';
 import DiscordUtils from '../../../discord/DiscordUtils';
 import Music from '../Music';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Play extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Plays audio, or searches YouTube for a query.';
-  }
-
-  public getName(): string {
-    return 'play';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'play',
+      description: 'Plays audio, or searches YouTube for a query.'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

@@ -3,6 +3,7 @@ import { Message } from 'discord.js';
 import ModuleRegistry from '../registries/ModuleRegistry';
 import { Logger } from './Logger';
 import IGuild from '../database/schema/IGuild';
+import ICommandDefinition from './ICommandDefinition';
 
 abstract class Command extends Logger {
   protected module: Module;
@@ -12,12 +13,29 @@ abstract class Command extends Logger {
     this.module = module;
   }
 
-  abstract getName(): string;
-  abstract getDescription(): string;
-  abstract run(message: Message, ...args: string[]): Promise<void>;
+  protected abstract getDefinition(): ICommandDefinition;
 
-  abstract admin: boolean;
-  abstract nsfw: boolean;
+  public get name(): string {
+    return this.getDefinition().name;
+  }
+
+  public get description(): string {
+    return this.getDefinition().description;
+  }
+
+  public get aliases(): string[] {
+    return this.getDefinition().aliases || [];
+  }
+
+  public get requiresAdmin(): boolean {
+    return !!this.getDefinition()?.admin;
+  }
+
+  public get isNsfw(): boolean {
+    return !!this.getDefinition()?.nsfw;
+  }
+
+  abstract run(message: Message, ...args: string[]): Promise<void>;
 
   public static async getCommand(commandName: string, guild: IGuild) {
     const modules = await ModuleRegistry.get().getEnabledModules(guild);

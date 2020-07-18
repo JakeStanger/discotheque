@@ -2,7 +2,6 @@ import Command from '../../../utils/Command';
 import { GuildMember, Message } from 'discord.js';
 import Module from '../../../utils/Module';
 import { DateTime } from 'luxon';
-import MessageHandler from '../../../discord/MessageHandler';
 import * as NaturalLanguageUnderstandingV1 from 'ibm-watson/natural-language-understanding/v1';
 import { IamAuthenticator } from 'ibm-watson/auth';
 import { map, maxBy, startCase, sortBy } from 'lodash';
@@ -10,21 +9,19 @@ import DiscordUtils from '../../../discord/DiscordUtils';
 import IMessage, {
   Message as DBMessage
 } from '../../../database/schema/IMessage';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Backlog extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Generates a summary of messages in a channel since you last spoke.';
-  }
-
-  public getName(): string {
-    return 'backlog';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'backlog',
+      description:
+        'Generates a summary of messages in a channel since you last spoke.'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {

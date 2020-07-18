@@ -58,7 +58,7 @@ class MessageHandler extends Logger {
         const command = await Command.getCommand(commandName, guild);
 
         if (command) {
-          if (command.nsfw && !(message.channel as TextChannel).nsfw) {
+          if (command.isNsfw && !(message.channel as TextChannel).nsfw) {
             await DiscordUtils.sendError(
               message.channel,
               'You can only use this command in NSFW channels'
@@ -67,7 +67,7 @@ class MessageHandler extends Logger {
           }
 
           if (
-            command.admin &&
+            command.requiresAdmin &&
             !message.member?.hasPermission('ADMINISTRATOR')
           ) {
             await DiscordUtils.sendError(

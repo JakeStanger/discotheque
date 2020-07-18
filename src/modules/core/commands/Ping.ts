@@ -1,21 +1,18 @@
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 import { Message } from 'discord.js';
+import ICommandDefinition from '../../../utils/ICommandDefinition';
 
 class Ping extends Command {
-  public readonly admin = false;
-  public readonly nsfw = false;
-
   constructor(module: Module) {
     super(module);
   }
 
-  public getDescription(): string {
-    return 'Pong!';
-  }
-
-  public getName(): string {
-    return 'ping';
+  protected getDefinition(): ICommandDefinition {
+    return {
+      name: 'ping',
+      description: 'Pong!'
+    };
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {
