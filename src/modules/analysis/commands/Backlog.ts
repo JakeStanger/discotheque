@@ -46,7 +46,7 @@ class Backlog extends Command {
       'Hold tight...'
     );
 
-    const messages = MessageHandler.get().collection;
+    const messages = DBMessage.collection;
 
     // Get the last message outside of the last 5 minutes
     const lastMessage = (

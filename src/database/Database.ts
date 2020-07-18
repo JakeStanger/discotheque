@@ -1,16 +1,12 @@
 import { MongoClient, Db, MongoError } from 'mongodb';
+import * as mongoose from 'mongoose';
 import { Logger } from '../utils/Logger';
-import collections, { ICollection } from './Collections';
+import { Connection } from 'mongoose';
 
 class Database extends Logger {
   private static instance: Database;
 
-  private _client!: MongoClient;
-  private _db!: Db;
-
-  public get client() {
-    return this._client;
-  }
+  private _db!: Connection;
 
   public get db() {
     return this._db;
@@ -19,8 +15,6 @@ class Database extends Logger {
   private constructor() {
     super();
     Database.instance = this;
-
-    this.ensureCollection = this.ensureCollection.bind(this);
   }
 
   public static get() {
@@ -28,28 +22,18 @@ class Database extends Logger {
   }
 
   public async connect(url: string, database: string) {
-    const client = new MongoClient(url, { useUnifiedTopology: true });
-    await client.connect();
+    await mongoose.connect(`${url}/${database}`, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useFindAndModify: false,
+      useCreateIndex: true
+    });
 
     Database.log('Connected to database');
 
-    const db = client.db(database);
-
-    this._client = client;
-    this._db = db;
-
-    await Promise.all(collections.map(this.ensureCollection));
+    this._db = mongoose.connection;
 
     Database.log('Collections configured');
-  }
-
-  private async ensureCollection(collection: ICollection) {
-    const dbCollection = await this.db.createCollection(collection.name);
-    await dbCollection
-      .createIndexes(collection.indexes)
-      .catch((err: MongoError) => {
-        console.error(err);
-      });
   }
 }
 

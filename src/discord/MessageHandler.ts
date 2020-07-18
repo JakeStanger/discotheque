@@ -1,20 +1,17 @@
 import { Logger } from '../utils/Logger';
 import { Message, PartialMessage } from 'discord.js';
 import GuildManager from '../database/GuildManager';
-import DBMessage from '../database/schema/IMessage';
 import Command from '../utils/Command';
-import { Collection } from 'mongodb';
-import Database from '../database/Database';
-import IMessage from '../database/schema/IMessage';
+import { Message as DBMessage } from '../database/schema/IMessage';
+import * as emojiMap from 'emoji-unicode-map';
+import DiscordUtils from './DiscordUtils';
 
 class MessageHandler extends Logger {
   private static instance: MessageHandler;
-  private readonly _collection: Collection<IMessage>;
 
   constructor() {
     super();
     MessageHandler.instance = this;
-    this._collection = Database.get().db.collection<IMessage>('messages');
 
     this.onMessage = this.onMessage.bind(this);
     this.onMessageDelete = this.onMessageDelete.bind(this);
@@ -22,10 +19,6 @@ class MessageHandler extends Logger {
 
   public static get() {
     return MessageHandler.instance || new MessageHandler();
-  }
-
-  public get collection() {
-    return this._collection;
   }
 
   public async onMessage(message: Message) {
@@ -58,7 +51,7 @@ class MessageHandler extends Logger {
   }
 
   public async writeMessage(message: Message) {
-    await this.collection.updateOne(
+    await DBMessage.updateOne(
       { id: message.id },
       {
         $set: this.getMessageDocument(message)
@@ -68,7 +61,7 @@ class MessageHandler extends Logger {
   }
 
   public async writeMessages(messages: Message[]) {
-    const bulk = this.collection.initializeUnorderedBulkOp();
+    const bulk = DBMessage.collection.initializeUnorderedBulkOp();
     messages.forEach(message =>
       bulk
         .find({ id: message.id })
@@ -80,7 +73,7 @@ class MessageHandler extends Logger {
   }
 
   public async onMessageDelete(message: Message | PartialMessage) {
-    await this.collection.deleteOne({ id: message.id });
+    await DBMessage.deleteOne({ id: message.id });
   }
 
   private getMessageDocument(message: Message) {
@@ -90,7 +83,7 @@ class MessageHandler extends Logger {
       authorId: message.author.id,
       channelId: message.channel.id,
       guildId: message.guild?.id,
-      timestamp: message.createdTimestamp, // TODO: Use date!
+      timestamp: message.createdTimestamp,
       attachments: message.attachments.map(attachment => ({
         id: attachment.id,
         fileName: attachment.name,
