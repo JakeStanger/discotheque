@@ -41,7 +41,7 @@ class ReactPin extends Command {
       )) as TextChannel;
 
       const embed = new MessageEmbed()
-        .setAuthor(message.member?.nickname)
+        .setAuthor(message.member?.nickname || message.author.username)
         .setThumbnail(
           message.author.avatarURL({ size: 32 }) ||
             message.author.defaultAvatarURL
