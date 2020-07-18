@@ -9,7 +9,7 @@ class DiscordClient extends Logger {
   constructor(token: string) {
     super();
 
-    const client = new Client();
+    const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
     const messageHandler = MessageHandler.get();
 
@@ -18,6 +18,8 @@ class DiscordClient extends Logger {
     client.on('messageDeleteBulk', messages =>
       messages.forEach(messageHandler.onMessageDelete)
     );
+
+    client.on('messageReactionAdd', messageHandler.onMessageReact);
 
     this.client = client;
     this._token = token;

@@ -83,6 +83,33 @@ class MessageHandler extends Logger {
     }
   }
 
+  public async onMessageReact(reaction: MessageReaction) {
+    if (!reaction.message.guild) {
+      return;
+    }
+
+    const guild = await GuildManager.get().getGuild(reaction.message.guild!.id);
+    if (!guild) {
+      await DiscordUtils.sendError(
+        reaction.message.channel,
+        'Could not find config for guild'
+      );
+      return;
+    }
+
+    if (reaction.partial) {
+      reaction = await reaction.fetch();
+    }
+
+    const identifier = reaction.emoji.identifier;
+    const name = emojiMap.get(decodeURIComponent(identifier));
+    const command = await Command.getCommand(`react:${name}`, guild);
+
+    if (command) {
+      await command.run(reaction.message, identifier);
+    }
+  }
+
   public async writeMessage(message: Message) {
     await DBMessage.updateOne(
       { id: message.id },

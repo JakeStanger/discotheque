@@ -2,6 +2,7 @@ import Module from './Module';
 import { Message } from 'discord.js';
 import ModuleRegistry from '../registries/ModuleRegistry';
 import { Logger } from './Logger';
+import IGuild from '../database/schema/IGuild';
 
 abstract class Command extends Logger {
   protected module: Module;

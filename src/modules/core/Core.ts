@@ -21,6 +21,10 @@ class Core extends Module {
     return undefined;
   }
 
+  public getIdentifier(): string {
+    return 'core';
+  }
+
   public getName(): string {
     return 'Core';
   }

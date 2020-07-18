@@ -14,7 +14,8 @@
     "lib": [
       "esnext"
     ],
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": [
     "./src/**/*.ts"
