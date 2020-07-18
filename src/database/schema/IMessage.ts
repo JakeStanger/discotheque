@@ -1,12 +1,13 @@
 import IAttachment, { attachmentSchema } from './IAttachment';
 import { Document, model, Schema } from 'mongoose';
+import { Snowflake } from 'discord.js';
 
 interface IMessage {
-  id: string;
+  id: Snowflake;
   content?: string;
-  authorId?: string;
-  channelId?: string;
-  guildId?: string;
+  authorId?: Snowflake;
+  channelId?: Snowflake;
+  guildId?: Snowflake;
   timestamp?: number;
   attachments?: IAttachment[];
 }

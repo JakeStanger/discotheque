@@ -1,7 +1,8 @@
 import { Schema } from 'mongoose';
+import { Snowflake } from 'discord.js';
 
 interface IAttachment {
-  id: string;
+  id: Snowflake;
   fileName?: string;
   fileSize?: number;
   width?: number;

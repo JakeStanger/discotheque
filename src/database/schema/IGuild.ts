@@ -1,20 +1,20 @@
 import IModuleConfiguration, {
-  moduleConfigurationSchema,
-  // ModuleConfiguration
+  moduleConfigurationSchema
 } from './IModuleConfiguration';
 import * as mongoose from 'mongoose';
 import { Document } from 'mongoose';
+import { Snowflake } from 'discord.js';
 
 interface IGuild {
-  id: string;
-  logMessages: boolean;
+  id: Snowflake;
+  logMessages: Snowflake[];
   prefix: string;
   modules: IModuleConfiguration[];
 }
 
 const guildSchema = new mongoose.Schema<IGuild>({
   id: { type: String, unique: true },
-  logMessages: Boolean,
+  logMessages: [String],
   prefix: String,
   modules: [moduleConfigurationSchema]
 });
