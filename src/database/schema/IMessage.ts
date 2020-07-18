@@ -1,6 +1,7 @@
 import IAttachment, { attachmentSchema } from './IAttachment';
 import { Document, model, Schema } from 'mongoose';
 import { Snowflake } from 'discord.js';
+const { Mixed } = Schema.Types;
 
 interface IMessage {
   id: Snowflake;
@@ -10,6 +11,7 @@ interface IMessage {
   guildId?: Snowflake;
   timestamp?: number;
   attachments?: IAttachment[];
+  metadata: Map<string, any>;
 }
 
 const messageSchema = new Schema<IMessage>({
@@ -19,7 +21,8 @@ const messageSchema = new Schema<IMessage>({
   channelId: { type: String, index: true },
   guildId: { type: String, index: true },
   timestamp: Date,
-  attachments: { type: [attachmentSchema] }
+  attachments: { type: [attachmentSchema] },
+  metadata: { type: Map, of: Mixed }
 });
 
 export const Message = model<IMessage & Document>('Message', messageSchema);

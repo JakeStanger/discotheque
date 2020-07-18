@@ -110,6 +110,14 @@ class MessageHandler extends Logger {
     }
   }
 
+  public async onMessageDelete(message: Message | PartialMessage) {
+    await DBMessage.deleteOne({ id: message.id });
+  }
+
+  public async getMessage(message: Message) {
+    return DBMessage.findOne({ id: message.id });
+  }
+
   public async writeMessage(message: Message) {
     await DBMessage.updateOne(
       { id: message.id },
@@ -132,8 +140,16 @@ class MessageHandler extends Logger {
     await bulk.execute();
   }
 
-  public async onMessageDelete(message: Message | PartialMessage) {
-    await DBMessage.deleteOne({ id: message.id });
+  public async addMetadata(message: Message, key: string, value: any) {
+    await this.writeMessage(message);
+    await DBMessage.updateOne(
+      { id: message.id },
+      {
+        $set: {
+          [`metadata.${key}`]: value
+        }
+      }
+    );
   }
 
   private getMessageDocument(message: Message) {

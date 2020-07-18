@@ -3,6 +3,7 @@ import { Message, MessageEmbed, TextChannel } from 'discord.js';
 import Module from '../../../utils/Module';
 import GuildManager from '../../../database/GuildManager';
 import ICommandDefinition from '../../../utils/ICommandDefinition';
+import MessageHandler from '../../../discord/MessageHandler';
 
 class ReactPin extends Command {
   constructor(module: Module) {
@@ -23,10 +24,13 @@ class ReactPin extends Command {
     const guild = await GuildManager.get().getGuild(message.guild.id);
     const config = guild ? this.module.getConfig(guild)?.settings : undefined;
 
-    console.log(this.module.getConfig(guild!));
-
     if (!config?.get('pinChannel')) {
       return; // TODO: Warn?
+    }
+
+    const dbMessage = await MessageHandler.get().getMessage(message);
+    if (dbMessage?.metadata?.get('pinned')) {
+      return; // already pinned
     }
 
     const requiredPinCount = config?.get('reactCount') || 3;
@@ -52,6 +56,8 @@ class ReactPin extends Command {
         .setDescription(message.content);
 
       await pinChannel.send(embed);
+
+      await MessageHandler.get().addMetadata(message, 'pinned', true);
     }
   }
 }
