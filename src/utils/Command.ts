@@ -15,8 +15,11 @@ abstract class Command extends Logger {
   abstract getDescription(): string;
   abstract run(message: Message, ...args: string[]): Promise<void>;
 
-  public static getCommand(commandName: string) {
-    const modules = ModuleRegistry.get().getModules();
+  abstract admin: boolean;
+  abstract nsfw: boolean;
+
+  public static async getCommand(commandName: string, guild: IGuild) {
+    const modules = await ModuleRegistry.get().getEnabledModules(guild);
     for (const module of modules) {
       const command = module.getCommand(commandName);
       if (command) {
@@ -25,10 +28,9 @@ abstract class Command extends Logger {
     }
   }
 
-  public static getAllCommands() {
-    return ModuleRegistry.get()
-      .getModules()
-      .map(module => module.getCommands()).flat();
+  public static async getAllCommands(guild: IGuild) {
+    const enabledModules = await ModuleRegistry.get().getEnabledModules(guild);
+    return enabledModules.map(module => module.getCommands()).flat();
   }
 }
 

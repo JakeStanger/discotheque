@@ -3,6 +3,9 @@ import { Message } from 'discord.js';
 import Music from '../Music';
 
 class Join extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Music) {
     super(module);
   }

@@ -1,6 +1,7 @@
 import { Logger } from '../utils/Logger';
 import Module from '../utils/Module';
 import * as kleur from 'kleur';
+import IGuild from '../database/schema/IGuild';
 
 class ModuleRegistry extends Logger {
   private static instance: ModuleRegistry;
@@ -22,6 +23,16 @@ class ModuleRegistry extends Logger {
 
   public getModules(): Module[] {
     return Object.values(this.modules);
+  }
+
+  public async getEnabledModules(guild: IGuild): Promise<Module[]> {
+    const disabledModules = guild.modules
+      .filter(m => m.disabled)
+      .map(m => m.name);
+
+    return Object.values(this.modules).filter(
+      module => !disabledModules.includes(module.getName())
+    );
   }
 
   public registerModule(module: new (...args: any[]) => any) {

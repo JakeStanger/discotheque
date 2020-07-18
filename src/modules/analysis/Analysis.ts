@@ -18,6 +18,10 @@ class Analysis extends Module {
     return undefined;
   }
 
+  getIdentifier(): string {
+    return 'analysis';
+  }
+
   getName(): string {
     return 'Analysis';
   }

@@ -1,8 +1,13 @@
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 import { Message, TextChannel } from 'discord.js';
+import DiscordUtils from '../../../discord/DiscordUtils';
+import GuildManager from '../../../database/GuildManager';
 
 class Help extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Module) {
     super(module);
   }
@@ -12,7 +17,24 @@ class Help extends Command {
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {
-    const commands = Command.getAllCommands();
+    if (!message.guild) {
+      await DiscordUtils.sendError(
+        message.channel,
+        'This only works inside guilds'
+      );
+      return;
+    }
+
+    const guild = await GuildManager.get().getGuild(message.guild!.id);
+    if (!guild) {
+      await DiscordUtils.sendError(
+        message.channel,
+        'Could not find config for guild'
+      );
+      return;
+    }
+
+    const commands = await Command.getAllCommands(guild);
 
     await (message.channel as TextChannel).send({
       embed: {

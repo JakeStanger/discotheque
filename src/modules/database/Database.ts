@@ -18,6 +18,10 @@ class Database extends Module {
     return undefined;
   }
 
+  public getIdentifier(): string {
+    return 'database';
+  }
+
   public getName(): string {
     return 'Database';
   }

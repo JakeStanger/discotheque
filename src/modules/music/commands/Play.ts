@@ -7,6 +7,9 @@ import DiscordUtils from '../../../discord/DiscordUtils';
 import Music from '../Music';
 
 class Play extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Module) {
     super(module);
   }

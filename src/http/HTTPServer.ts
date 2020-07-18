@@ -91,11 +91,8 @@ class HTTPServer extends Logger {
 
       console.log(guilds);
 
-      const overlappingGuilds = await GuildManager.get()
-        .getGuilds(guilds)
-        .then(g => g.toArray());
+      const overlappingGuilds = await GuildManager.get().getGuilds(guilds);
 
-      //console.log(req.user)
       res.json({
         guilds: overlappingGuilds
       });

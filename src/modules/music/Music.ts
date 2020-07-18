@@ -77,6 +77,10 @@ class Music extends Module {
     return undefined;
   }
 
+  public getIdentifier(): string {
+    return 'music';
+  }
+
   public getName(): string {
     return 'Music';
   }

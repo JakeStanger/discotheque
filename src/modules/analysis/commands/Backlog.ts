@@ -7,9 +7,14 @@ import * as NaturalLanguageUnderstandingV1 from 'ibm-watson/natural-language-und
 import { IamAuthenticator } from 'ibm-watson/auth';
 import { map, maxBy, startCase, sortBy } from 'lodash';
 import DiscordUtils from '../../../discord/DiscordUtils';
-import IMessage from '../../../database/schema/IMessage';
+import IMessage, {
+  Message as DBMessage
+} from '../../../database/schema/IMessage';
 
 class Backlog extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Module) {
     super(module);
   }

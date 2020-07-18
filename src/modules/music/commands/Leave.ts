@@ -4,6 +4,9 @@ import { Message } from 'discord.js';
 import Music from '../Music';
 
 class Leave extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Module) {
     super(module);
   }

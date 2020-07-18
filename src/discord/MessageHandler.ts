@@ -1,5 +1,10 @@
 import { Logger } from '../utils/Logger';
-import { Message, PartialMessage } from 'discord.js';
+import {
+  Message,
+  MessageReaction,
+  PartialMessage,
+  TextChannel
+} from 'discord.js';
 import GuildManager from '../database/GuildManager';
 import Command from '../utils/Command';
 import { Message as DBMessage } from '../database/schema/IMessage';
@@ -41,9 +46,37 @@ class MessageHandler extends Logger {
           .substring(prefix.length)
           .split(' ');
 
-        const command = Command.getCommand(commandName);
+        const guild = await GuildManager.get().getGuild(message.guild!.id);
+        if (!guild) {
+          await DiscordUtils.sendError(
+            message.channel,
+            'Could not find config for guild'
+          );
+          return;
+        }
+
+        const command = await Command.getCommand(commandName, guild);
 
         if (command) {
+          if (command.nsfw && !(message.channel as TextChannel).nsfw) {
+            await DiscordUtils.sendError(
+              message.channel,
+              'You can only use this command in NSFW channels'
+            );
+            return;
+          }
+
+          if (
+            command.admin &&
+            !message.member?.hasPermission('ADMINISTRATOR')
+          ) {
+            await DiscordUtils.sendError(
+              message.channel,
+              'You must be an administrator to use this command'
+            );
+            return;
+          }
+
           await command.run(message, ...args);
         }
       }

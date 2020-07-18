@@ -1,6 +1,7 @@
 import Command from './Command';
 import Log from './Logger';
 import * as kleur from 'kleur';
+import IGuild from '../database/schema/IGuild';
 
 abstract class Module {
   private readonly commands: Record<string, Command> = {};
@@ -15,6 +16,14 @@ abstract class Module {
     });
   }
 
+  public getConfig(guild: IGuild) {
+    return guild.modules.find(m => m.name === this.getIdentifier());
+  }
+
+  public isDisabled(guild: IGuild) {
+    return this.getConfig(guild)?.disabled;
+  }
+
   public getCommand(command: string) {
     return this.commands[command];
   }
@@ -23,6 +32,7 @@ abstract class Module {
     return Object.values(this.commands);
   }
 
+  abstract getIdentifier(): string;
   abstract getName(): string;
   abstract getDescription(): string;
   abstract getLink(): string | undefined;

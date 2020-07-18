@@ -3,6 +3,9 @@ import Module from '../../../utils/Module';
 import { Message } from 'discord.js';
 
 class Ping extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   constructor(module: Module) {
     super(module);
   }

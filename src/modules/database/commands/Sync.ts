@@ -12,6 +12,9 @@ import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 
 class Sync extends Command {
+  public readonly admin = false;
+  public readonly nsfw = false;
+
   private msgCount = 0;
   private channelMsgCount = 0;
 
