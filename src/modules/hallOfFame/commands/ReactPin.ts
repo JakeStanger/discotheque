@@ -40,6 +40,8 @@ class ReactPin extends Command {
         ?.count || 0;
 
     if (reactCount >= requiredPinCount) {
+      await MessageHandler.get().addMetadata(message, 'pinned', true);
+
       const pinChannel = (await message.guild?.channels.resolve(
         config.get('pinChannel')!
       )) as TextChannel;
@@ -56,8 +58,6 @@ class ReactPin extends Command {
         .setDescription(message.content);
 
       await pinChannel.send(embed);
-
-      await MessageHandler.get().addMetadata(message, 'pinned', true);
     }
   }
 }
