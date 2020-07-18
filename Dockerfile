@@ -32,7 +32,11 @@ ENV PATH=/root/.cargo/bin:$PATH
 
 WORKDIR /app
 
-COPY . /app
+COPY ./package.json /app/package.json
+COPY ./yarn.lock /app/yarn.lock
+COPY ./nodemon.json /app/nodemon.json
+COPY ./tsconfig.json /app/tsconfig.json
+COPY ./types /app/types
 
 RUN yarn install --frozen-lockfile
 ENV PATH="./node_modules/.bin:${PATH}"
