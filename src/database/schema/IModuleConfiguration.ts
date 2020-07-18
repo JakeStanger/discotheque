@@ -7,7 +7,7 @@ interface IModuleConfiguration {
 }
 
 export const moduleConfigurationSchema = new Schema({
-  name: { type: String, unique: true },
+  name: { type: String, /*unique: true*/ },
   disabled: { type: Boolean },
   settings: { type: Map, of: String }
 });
