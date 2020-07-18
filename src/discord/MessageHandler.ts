@@ -39,7 +39,7 @@ class MessageHandler extends Logger {
 
       const isCommand = message.content.startsWith(prefix);
 
-      if (guild.logMessages && !isCommand) {
+      if (guild.logMessages?.includes(message.channel.id) && !isCommand) {
         await this.writeMessage(message);
       } else if (isCommand) {
         const [commandName, ...args] = message.content
