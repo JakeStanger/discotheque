@@ -146,7 +146,7 @@ const EventsTable: React.FC<IEventsTableProps> = ({ eventService }) => {
                   <TableCell>{startCase(getCategoryName(event))}</TableCell>
                   <TableCell>{getStatChanges(event)}</TableCell>
                   <TableCell>
-                    <Link component={RouterLink} to={`/events/${event._id}`}>
+                    <Link component={RouterLink} to={`/event/${event._id}`}>
                       <ViewIcon />
                     </Link>
                   </TableCell>

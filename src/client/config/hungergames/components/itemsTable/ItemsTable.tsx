@@ -65,7 +65,7 @@ const ItemsTable: React.FC<IItemsTableProps> = ({ itemService }) => {
                   <TableCell>{ItemType[item.type]}</TableCell>
                   <TableCell>{item.strength}</TableCell>
                   <TableCell>
-                    <Link component={RouterLink} to={`/items/${item._id}`}>
+                    <Link component={RouterLink} to={`/item/${item._id}`}>
                       <ViewIcon />
                     </Link>
                   </TableCell>
