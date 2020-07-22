@@ -11,15 +11,14 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
+    "esModuleInterop": true,
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
     "outDir": "./lib",
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "jsx": "react"
   },
-  "include": [
-    "./src/**/*.ts"
-  ],
   "exclude": [
    "**/node_modules",
    "**/*.spec.ts"

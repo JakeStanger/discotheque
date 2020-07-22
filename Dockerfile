@@ -34,8 +34,11 @@ WORKDIR /app
 
 COPY ./package.json /app/package.json
 COPY ./yarn.lock /app/yarn.lock
-COPY ./nodemon.json /app/nodemon.json
+COPY nodemon.json /app/nodemon.json
 COPY ./tsconfig.json /app/tsconfig.json
+COPY ./tsconfig.server.json /app/tsconfig.server.json
+COPY ./tsconfig.client.json /app/tsconfig.client.json
+COPY ./webpack.config.js /app/webpack.config.js
 COPY ./types /app/types
 
 RUN yarn install --frozen-lockfile

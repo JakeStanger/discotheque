@@ -2,7 +2,7 @@ import Command from '../../../utils/Command';
 import { GuildMember, Message } from 'discord.js';
 import Module from '../../../utils/Module';
 import { DateTime } from 'luxon';
-import * as NaturalLanguageUnderstandingV1 from 'ibm-watson/natural-language-understanding/v1';
+import NaturalLanguageUnderstandingV1 from 'ibm-watson/natural-language-understanding/v1';
 import { IamAuthenticator } from 'ibm-watson/auth';
 import { map, maxBy, startCase, sortBy } from 'lodash';
 import DiscordUtils from '../../../discord/DiscordUtils';

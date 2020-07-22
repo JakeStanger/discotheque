@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "esModuleInterop": true
+  },
+  "include": ["./src/server/**/*"],
+  "exclude": ["**/node_modules", "**/*.spec.ts"]
+}

@@ -1,5 +1,4 @@
-import { MongoClient, Db, MongoError } from 'mongodb';
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import { Logger } from '../utils/Logger';
 import { Connection } from 'mongoose';
 

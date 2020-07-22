@@ -35,7 +35,7 @@ abstract class Command extends Logger {
     return !!this.getDefinition()?.nsfw;
   }
 
-  abstract run(message: Message, ...args: string[]): Promise<void>;
+  public abstract run(message: Message, ...args: string[]): Promise<void>;
 
   public static async getCommand(commandName: string, guild: IGuild) {
     const modules = await ModuleRegistry.get().getEnabledModules(guild);
@@ -47,7 +47,7 @@ abstract class Command extends Logger {
     }
   }
 
-  public static async getAllCommands(guild: IGuild) {
+  public static async getAllCommands(guild: IGuild): Promise<Command[]> {
     const enabledModules = await ModuleRegistry.get().getEnabledModules(guild);
     return enabledModules.map(module => module.getCommands()).flat();
   }

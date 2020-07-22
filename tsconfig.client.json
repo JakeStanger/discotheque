@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./client"
+  },
+  "include": [
+    "./src/client/**/*"
+  ],
+  "exclude": [
+   "**/node_modules",
+   "**/*.spec.ts",
+    "**/types"
+ ]
+}

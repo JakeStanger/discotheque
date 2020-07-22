@@ -1,6 +1,6 @@
 import { Logger } from '../utils/Logger';
 import Module from '../utils/Module';
-import * as kleur from 'kleur';
+import kleur from 'kleur';
 import IGuild from '../database/schema/IGuild';
 
 class ModuleRegistry extends Logger {

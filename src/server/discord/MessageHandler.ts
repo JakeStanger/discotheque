@@ -8,7 +8,7 @@ import {
 import GuildManager from '../database/GuildManager';
 import Command from '../utils/Command';
 import { Message as DBMessage } from '../database/schema/IMessage';
-import * as emojiMap from 'emoji-unicode-map';
+import emojiMap from 'emoji-unicode-map';
 import DiscordUtils from './DiscordUtils';
 
 class MessageHandler extends Logger {

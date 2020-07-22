@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import ClientManager from './discord/ClientManager';
 import Database from './database/Database';
 import HTTPServer from './http/HTTPServer';

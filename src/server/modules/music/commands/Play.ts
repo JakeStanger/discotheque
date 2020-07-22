@@ -1,8 +1,8 @@
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 import { Message } from 'discord.js';
-import * as ytdl from 'ytdl-core';
-import * as youtubeSearch from 'youtube-search';
+import ytdl from 'ytdl-core';
+import youtubeSearch from 'youtube-search';
 import DiscordUtils from '../../../discord/DiscordUtils';
 import Music from '../Music';
 import ICommandDefinition from '../../../utils/ICommandDefinition';

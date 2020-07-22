@@ -1,7 +1,7 @@
 import IModuleConfiguration, {
   moduleConfigurationSchema
 } from './IModuleConfiguration';
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import { Document } from 'mongoose';
 import { Snowflake } from 'discord.js';
 

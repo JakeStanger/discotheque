@@ -6,7 +6,7 @@ import {
   MessageEmbedOptions,
   TextChannel
 } from 'discord.js';
-import * as kleur from 'kleur';
+import kleur from 'kleur';
 import MessageHandler from '../../../discord/MessageHandler';
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
