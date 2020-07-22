@@ -55,8 +55,9 @@ class ReactPin extends Command {
         .setColor(message.member?.displayColor || 0)
         .setTimestamp(message.createdTimestamp)
         .attachFiles(message.attachments.array())
-        .setDescription(message.content)
-        .addField('Link', `[View Message](${message.url})`);
+        .setDescription(
+          (message.content + '\n\n' + `[View Message](${message.url})`).trim()
+        );
 
       await pinChannel.send(embed);
     }
