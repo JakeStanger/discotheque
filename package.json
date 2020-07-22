@@ -8,7 +8,7 @@
     "build:server": "tsc --project tsconfig.server.json",
     "build:client": "webpack --env.production",
     "build": "yarn build:server && yarn build:client",
-    "prestart": "yarn build",
+    "prestart": "yarn build:server",
     "start": "node lib/index.js",
     "start:dev": "concurrently --names server,client \"nodemon\" \"webpack -w\""
   },
