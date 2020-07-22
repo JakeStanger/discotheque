@@ -1,0 +1,8 @@
+[
+  {
+    "description": "%name% lost their %armour% while washing in the river."
+  },
+  {
+    "description": "%name% had their %armour% stolen while rushing to investigate a noise in the woods."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "bow",
+    "strength": 50
+  },
+  {
+    "name": "sword",
+    "strength": 20
+  },
+  {
+    "name": "rock",
+    "strength": 5
+  }
+]

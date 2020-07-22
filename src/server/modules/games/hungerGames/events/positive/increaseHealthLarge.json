@@ -1,0 +1,24 @@
+[
+  {
+    "description": "A sponsor gave medicine to %name%, healing them.",
+    "statChanges": {
+      "health": [40, 60],
+      "stamina": [10, 20]
+    }
+  },
+  {
+    "description": "%name% took a sip of Superbee honey, giving them a big health boost.",
+    "statChanges": {
+      "health": [40, 60],
+      "hunger": [10, 20]
+    }
+  },
+  {
+    "description": "%name% spent time wrapping their wounds.",
+    "statChanges": {
+      "health": [60, 80],
+      "hunger": [0, -10],
+      "stamina": [0, -10]
+    }
+  }
+]

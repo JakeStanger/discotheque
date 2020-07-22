@@ -1,0 +1,14 @@
+[
+  {
+    "description": "%name% sat down on a tree stump for a while.",
+    "statChanges": {
+      "stamina": [10, 20]
+    }
+  },
+  {
+    "description": "%name% reached into their pouch for a picture of their mother, which inspired them to keep going on!",
+    "statChanges": {
+      "stamina": [10, 20]
+    }
+  }
+]

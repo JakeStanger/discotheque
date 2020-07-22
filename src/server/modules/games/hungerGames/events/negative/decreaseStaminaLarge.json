@@ -1,0 +1,21 @@
+[
+  {
+    "description": "%name% was chased by a wolf pack but managed to escape.",
+    "statChanges": {
+      "stamina": [-40, -60]
+    }
+  },
+  {
+    "description": "%name% tripped over a log and sprained their ankle",
+    "statChanges": {
+      "health": [-5, -15],
+      "stamina": [-30, -50]
+    }
+  },
+  {
+    "description": "%name% had a restless sleep",
+    "statChanges": {
+      "stamina": [-50, -50]
+    }
+  }
+]

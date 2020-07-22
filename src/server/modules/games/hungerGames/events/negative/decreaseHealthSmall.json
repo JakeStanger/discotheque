@@ -1,0 +1,14 @@
+[
+  {
+    "description": "%name% attacked a bee hive and was stung by bees.",
+    "statChanges": {
+      "health": [-5, -20]
+    }
+  },
+  {
+    "description": "%name% noticed their appendix flared up.",
+    "statChanges": {
+      "health": [-10, -15]
+    }
+  }
+]

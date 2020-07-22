@@ -1,0 +1,16 @@
+[
+  {
+    "description": "%name% patched up their wounds.",
+    "statChanges": {
+      "health": [40, 60],
+      "hunger": [0, -10],
+      "stamina": [0, -10]
+    }
+  },
+  {
+    "description": "%name% made a bandage out of some leaves, stopping the bleeding for now.",
+    "statChanges": {
+      "health": [30, 40]
+    }
+  }
+]

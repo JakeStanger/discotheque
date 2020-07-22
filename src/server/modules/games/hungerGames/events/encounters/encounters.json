@@ -1,0 +1,14 @@
+[
+  {
+    "description": "%victor% stabbed %loser% with their %weapon%, fatally wounding them.",
+    "requirements": {
+      "weapon": true
+    }
+  },
+  {
+    "description": "%victor% beat %loser% to death with their bare hands.",
+    "requirements": {
+      "weapon": false
+    }
+  }
+]

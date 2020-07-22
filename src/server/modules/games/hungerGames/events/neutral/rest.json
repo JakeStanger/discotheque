@@ -1,0 +1,9 @@
+[
+  {
+    "description": "Exhausted, %name% had to rest.",
+    "statChanges": {
+      "hunger": [-10, -20],
+      "stamina": [40, 40]
+    }
+  }
+]

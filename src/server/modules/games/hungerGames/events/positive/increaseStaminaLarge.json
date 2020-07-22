@@ -1,0 +1,22 @@
+[
+  {
+    "description": "%name% went exploring and found a wonderfully serene glade, where they chose to rest for a while.",
+    "statChanges": {
+      "hunger": [0, 10],
+      "stamina": [40, 60]
+    }
+  },
+  {
+    "description": "%name% climbed up a tree and had a nap for a while",
+    "statChanges": {
+      "stamina": [30, 50]
+    }
+  },
+  {
+    "description": "A sponsor sent %name% some reinvigorating powder.",
+    "statChanges": {
+      "health": [0, -10],
+      "stamina": [60, 70]
+    }
+  }
+]

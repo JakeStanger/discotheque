@@ -1,0 +1,9 @@
+[
+  {
+    "description": "%name% saw a corpse of a previous contestant, making them violently sick",
+    "statChanges": {
+      "hunger": [-40, -60],
+      "stamina": [-5, -10]
+    }
+  }
+]

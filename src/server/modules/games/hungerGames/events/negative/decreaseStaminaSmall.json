@@ -1,0 +1,14 @@
+[
+  {
+    "description": "The forest got thick and %name% struggled to fight their way through",
+    "statChanges": {
+      "stamina": [-10, -20]
+    }
+  },
+  {
+    "description": "%name% got too close to the border, setting off a trap. Luckily they managed to escape.",
+    "statChanges": {
+      "stamina": [-5, -15]
+    }
+  }
+]

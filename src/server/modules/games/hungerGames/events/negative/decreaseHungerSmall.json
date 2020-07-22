@@ -1,0 +1,8 @@
+[
+  {
+    "description": "%name% was reminded of their mother's cooking, and their stomach rumbled.",
+    "statChanges": {
+      "hunger": [-15, -30]
+    }
+  }
+]

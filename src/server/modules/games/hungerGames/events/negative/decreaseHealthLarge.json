@@ -1,0 +1,35 @@
+[
+  {
+    "description": "A bear attacked %name%!",
+    "statChanges": {
+      "health": [-40, -60],
+      "stamina": [-10, -20]
+    }
+  },
+  {
+    "description": "A tree fell on %name% and crushed them.",
+    "statChanges": {
+      "health": [-50, -70]
+    }
+  },
+  {
+    "description": "%name% ate some spoiled meat.",
+    "statChanges": {
+      "health": [-30, -50],
+      "hunger": [-5, -15]
+    }
+  },
+  {
+    "description": "%name% was stung by a superbee.",
+    "statChanges": {
+      "health": [-20, -40],
+      "stamina": [-10, -30]
+    }
+  },
+  {
+    "description": "%name% walked too close to the border and got hit by a trap",
+    "statChanges": {
+      "health": [-40, -40]
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "description": "%name% found and ate some berries. Unfortunately they were poisonous!",
+    "statChanges": {
+      "health": [0, -10],
+      "hunger": [10, 20]
+    }
+  },
+  {
+    "description": "%name% found and ate some berries. They were tasty!",
+    "statChanges": {
+      "hunger": [20, 40]
+    }
+  },
+  {
+    "description": "%name% trapped down and killed a rabbit.",
+    "statChanges": {
+      "hunger": [20, 40],
+      "stamina": [0, -10]
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "berries",
+    "strength": 1
+  },
+  {
+    "name": "nuts",
+    "strength": 2
+  },
+  {
+    "name": "meat",
+    "strength": 3
+  }
+]

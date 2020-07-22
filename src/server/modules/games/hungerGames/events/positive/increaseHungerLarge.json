@@ -1,0 +1,24 @@
+[
+  {
+    "description": "%name% found an abandoned meal and wolfed it down",
+    "statChanges": {
+      "hunger": [50, 70],
+      "stamina": [0, 10]
+    }
+  },
+  {
+    "description": "While walking through a forest, %name% found a wild animal that had been crushed by a fallen tree, and ate it",
+    "statChanges": {
+      "health": [0, 5],
+      "hunger": [40, 60]
+    }
+  },
+  {
+    "description": "%name% spotted a deer in a clearing and successfully chased it down",
+    "statChanges": {
+      "health": [0, -5],
+      "hunger": [60, 80],
+      "stamina": [0, -20]
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "helmet",
+    "strength": 5
+  },
+  {
+    "name": "shield",
+    "strength": 30
+  },
+  {
+    "name": "suit of armour",
+    "strength": 50
+  }
+]
