@@ -46,6 +46,18 @@ class ReactPin extends Command {
         config.get('pinChannel')!
       )) as TextChannel;
 
+      const MAX_UPLOAD_SIZE = 8_000_000;
+
+      const description = [
+        message.content,
+        message.attachments
+          .filter(a => a.size > MAX_UPLOAD_SIZE)
+          .map(a => `[${a.name || a.url}](${a.url})`),
+        `[Message Link](${message.url})`
+      ]
+        .join('\n\n')
+        .trim();
+
       const embed = new MessageEmbed()
         .setAuthor(message.member?.nickname || message.author.username)
         .setThumbnail(
@@ -54,10 +66,10 @@ class ReactPin extends Command {
         )
         .setColor(message.member?.displayColor || 0)
         .setTimestamp(message.createdTimestamp)
-        .attachFiles(message.attachments.array())
-        .setDescription(
-          (message.content + '\n\n' + `[View Message](${message.url})`).trim()
-        );
+        .attachFiles(
+          message.attachments.filter(a => a.size < MAX_UPLOAD_SIZE).array()
+        )
+        .setDescription(description);
 
       await pinChannel.send(embed);
     }
