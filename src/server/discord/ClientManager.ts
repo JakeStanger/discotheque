@@ -22,6 +22,16 @@ class ClientManager extends Logger {
       await client.finishLoad();
     }
   }
+
+  /**
+   * Gets the first client present in the guild
+   * @param guildId
+   */
+  public static getClientForGuild(guildId: string) {
+    return ClientManager.clients.find(c =>
+      c.getDiscordClient().guilds.fetch(guildId)
+    );
+  }
 }
 
 export default ClientManager;

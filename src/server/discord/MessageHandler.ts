@@ -162,7 +162,7 @@ class MessageHandler extends Logger {
       timestamp: message.createdTimestamp,
       attachments: message.attachments.map(attachment => ({
         id: attachment.id,
-        fileName: attachment.name,
+        fileName: attachment.name || undefined,
         fileSize: attachment.size,
         width: attachment.width || undefined,
         height: attachment.height || undefined,

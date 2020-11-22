@@ -15,6 +15,10 @@ const collections: ICollection[] = [
       { key: { channelId: 1 } },
       { key: { guildId: 1 } }
     ]
+  },
+  {
+    name: 'gptconversations',
+    indexes: []
   }
 ];
 

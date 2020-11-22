@@ -38,6 +38,10 @@ class DiscordClient extends Logger {
     await this.client.user!.setStatus('online');
     await this.client.user!.setActivity('you', { type: 'WATCHING' });
   }
+
+  public getDiscordClient() {
+    return this.client;
+  }
 }
 
 export default DiscordClient;

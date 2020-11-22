@@ -1,6 +1,7 @@
 import { Logger } from '../utils/Logger';
 import { defaultGuildSettings } from './DefaultSettings';
 import IGuild, { Guild } from './schema/IGuild';
+import ClientManager from '../discord/ClientManager';
 
 class GuildManager extends Logger {
   private static instance: GuildManager;
@@ -21,6 +22,10 @@ class GuildManager extends Logger {
     return Guild.find({ $or: guilds.map(guild => ({ id: guild })) });
   }
 
+  public async getAll() {
+    return Guild.find();
+  }
+
   /**
    * Adds a guild if it does not already exist
    * @param id
@@ -35,6 +40,11 @@ class GuildManager extends Logger {
 
   public async updateGuild(id: string, update: Partial<IGuild>) {
     return Guild.findOneAndUpdate({ id }, { $set: update }, { new: true });
+  }
+
+  public async getDiscordGuild(guildId: string) {
+    const client = ClientManager.getClientForGuild(guildId)?.getDiscordClient();
+    return client?.guilds.fetch(guildId) ?? undefined;
   }
 }
 

@@ -1,11 +1,13 @@
 import Command from './Command';
-import Log from './Logger';
+import Log, { Logger } from './Logger';
 import kleur from 'kleur';
 import IGuild from '../database/schema/IGuild';
 import Route from './Route';
-import { Collection } from 'discord.js';
+import { Collection, Snowflake } from 'discord.js';
 import HTTPServer from '../http/HTTPServer';
 import { NextFunction, Request, Response } from 'express';
+import GuildManager from '../database/GuildManager';
+import IModuleConfiguration from '../database/schema/IModuleConfiguration';
 
 abstract class Module {
   private readonly commands: Collection<string, Command> = new Collection();
@@ -46,6 +48,21 @@ abstract class Module {
 
   public getConfig(guild: IGuild) {
     return guild.modules.find(m => m.name === this.getIdentifier());
+  }
+
+  public async getConfigs() {
+    const configs: Collection<
+      Snowflake,
+      IModuleConfiguration | undefined
+    > = new Collection();
+
+    await GuildManager.get()
+      .getAll()
+      .then(guilds =>
+        guilds.forEach(guild => configs.set(guild.id, this.getConfig(guild)))
+      );
+
+    return configs;
   }
 
   public isDisabled(guild: IGuild) {
