@@ -89,7 +89,7 @@ class Sync extends Command {
     ) {
       await statusMessage
         .edit('', { embed: this.getEmbed(msg, channel.name) })
-        .catch(Sync.error);
+        .catch(err => Sync.error(err));
     }
 
     this.prevMonth = DateTime.fromMillis(msg.createdTimestamp).toFormat(
@@ -98,7 +98,7 @@ class Sync extends Command {
 
     const messages = await msg.channel.messages
       .fetch({ before: msg.id, limit: 100 })
-      .catch(Sync.error);
+      .catch(err => Sync.error(err));
 
     if (messages && messages.size) {
       const messageHandler = MessageHandler.get();
