@@ -31,7 +31,7 @@ class ModuleRegistry extends Logger {
       .map(m => m.name);
 
     return Object.values(this.modules).filter(
-      module => !disabledModules.includes(module.getName())
+      module => !disabledModules.includes(module.getIdentifier())
     );
   }
 
