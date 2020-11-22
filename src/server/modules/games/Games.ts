@@ -1,11 +1,6 @@
 import Module from '../../utils/Module';
 import module from '../../decorators/module';
 import HungerGames from './hungerGames/HungerGames';
-// import Events from './hungerGames/webPanel/_old/Events';
-// import Items from './hungerGames/webPanel/_old/Items';
-// import Item from './hungerGames/webPanel/_old/Item';
-// import UpdateItem from './hungerGames/webPanel/_old/UpdateItem';
-// import Event from './hungerGames/webPanel/_old/Event';
 import HTTPServer from '../../http/HTTPServer';
 import path from 'path';
 import express from 'express';

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import styles from './EventsTable.module.scss';
 import IEventsTableProps from './IEventsTableProps';
 import Typography from '@material-ui/core/Typography';
 import TableContainer from '@material-ui/core/TableContainer';
@@ -25,7 +24,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { getCategories } from '../eventForm/EventForm';
-import FormControl from '@material-ui/core/FormControl';
 
 function getCategoryName(event: IEvent) {
   if (event.category === undefined) return;
