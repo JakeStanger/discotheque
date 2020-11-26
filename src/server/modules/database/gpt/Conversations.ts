@@ -1,10 +1,18 @@
 import { GPTConversation } from '../../../database/schema/IGPTConversation';
 import IModuleConfiguration from '../../../database/schema/IModuleConfiguration';
 import GuildManager from '../../../database/GuildManager';
-import { GuildMember, TextChannel } from 'discord.js';
+import { Guild, GuildMember, TextChannel } from 'discord.js';
 import { random } from 'lodash';
 import Log from '../../../utils/Logger';
 import * as kleur from 'kleur';
+
+async function getAuthor(guild: Guild, id: string) {
+  try {
+    return await guild?.members.fetch(id);
+  } catch {
+    return guild.members.fetch(guild.client.user!.id);
+  }
+}
 
 export async function runConversation(
   config: IModuleConfiguration | undefined,
@@ -47,7 +55,7 @@ export async function runConversation(
 
   let prevMember: GuildMember | undefined;
   for (const message of conversation.messages) {
-    const author = await guild?.members.fetch(message.authorId);
+    const author = await getAuthor(guild, message.authorId);
 
     // get reasonable words per minute, in seconds
     const wps = random(50, 90) / 60;
