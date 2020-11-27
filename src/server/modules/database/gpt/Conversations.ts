@@ -54,7 +54,7 @@ export async function runConversation(
   logger.log('Starting conversation');
 
   let prevMember: GuildMember | undefined;
-  for (const message of conversation.messages) {
+  for (const message of conversation.messages.filter(m => m.content)) {
     const author = await getAuthor(guild, message.authorId);
 
     // get reasonable words per minute, in seconds
