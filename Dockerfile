@@ -46,4 +46,4 @@ ENV PATH="./node_modules/.bin:${PATH}"
 
 EXPOSE ${PORT}
 
-CMD ["yarn", "start:dev"]
+CMD ["yarn", "start"]
