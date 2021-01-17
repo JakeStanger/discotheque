@@ -11,6 +11,8 @@ import MessageHandler from '../../../discord/MessageHandler';
 import Command from '../../../utils/Command';
 import Module from '../../../utils/Module';
 import ICommandDefinition from '../../../utils/ICommandDefinition';
+import DiscordUtils from '../../../discord/DiscordUtils';
+import GuildManager from '../../../database/GuildManager';
 
 class Sync extends Command {
   private msgCount = 0;
@@ -31,7 +33,7 @@ class Sync extends Command {
     };
   }
 
-  public async doSync(msg: Message) {
+  public async doSync(msg: Message, logMessages: string[]) {
     if (this.syncInProgress) return;
     this.syncInProgress = true;
     this.msgCount = 0;
@@ -41,10 +43,9 @@ class Sync extends Command {
     })) as Message;
 
     const channels: Collection<string, TextChannel> =
-      (msg.guild?.channels.cache.filter(c => c.type === 'text') as Collection<
-        string,
-        TextChannel
-      >) || [];
+      (msg.guild?.channels.cache.filter(
+        c => c.type === 'text' && logMessages.includes(c.id)
+      ) as Collection<string, TextChannel>) || [];
 
     for (const [channelId, channel] of channels) {
       this.channelMsgCount = 0;
@@ -144,7 +145,17 @@ class Sync extends Command {
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {
-    await this.doSync(message);
+    if (!message.guild) {
+      await DiscordUtils.sendError(
+        message.channel,
+        'This can only be used from servers'
+      );
+      return;
+    }
+
+    const guild = await GuildManager.get().getGuild(message.guild.id);
+
+    await this.doSync(message, guild!.logMessages);
   }
 }
 
