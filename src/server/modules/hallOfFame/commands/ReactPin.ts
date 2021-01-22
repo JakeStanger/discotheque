@@ -28,6 +28,10 @@ class ReactPin extends Command {
       return; // TODO: Warn?
     }
 
+    if (message.channel.id === config?.get('pinChannel')) {
+      return;
+    }
+
     const dbMessage = await MessageHandler.get().getMessage(message);
     if (dbMessage?.metadata?.get('pinned')) {
       return; // already pinned
