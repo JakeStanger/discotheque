@@ -20,15 +20,17 @@ class SongVSong extends Command {
   }
 
   public async run(message: Message, ...args: string[]): Promise<void> {
-    const tracks = await fetch(
-      `${process.env.DGM_DATABASE_URL}/track`
-    ).then(r => r.json());
+    const tracks = await fetch(`${process.env.DGM_DATABASE_URL}/track`)
+      .then(r => r.json())
+      .then(r => r.data);
 
     let tracksShuffled = shuffle(tracks);
 
     const track1 = await fetch(
       `${process.env.DGM_DATABASE_URL}/track/${tracksShuffled[0].id}`
-    ).then(r => r.json());
+    )
+      .then(r => r.json())
+      .then(r => r.data);
 
     // Stop some tracks from being matched against others
     if (
@@ -46,7 +48,9 @@ class SongVSong extends Command {
 
     const track2 = await fetch(
       `${process.env.DGM_DATABASE_URL}/track/${tracksShuffled[1].id}`
-    ).then(r => r.json());
+    )
+      .then(r => r.json())
+      .then(r => r.data);
 
     await DiscordUtils.sendEmbed(message.channel, {
       fields: [
