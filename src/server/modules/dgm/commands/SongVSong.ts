@@ -52,18 +52,21 @@ class SongVSong extends Command {
       .then(r => r.json())
       .then(r => r.data);
 
-    await DiscordUtils.sendEmbed(message.channel, {
+    const embedMessage = await DiscordUtils.sendEmbed(message.channel, {
       fields: [
         {
-          name: track1.name,
-          value: track1.album?.name ?? ' '
+          name: `:regional_indicator_a: ${track1.name}`,
+          value: track1.album?.name ?? '-'
         },
         {
-          name: track2.name,
-          value: track2.album?.name ?? ' '
+          name: `:regional_indicator_b: ${track2.name}`,
+          value: track2.album?.name ?? '-'
         }
       ]
     });
+
+    await embedMessage.react('🇦');
+    await embedMessage.react('🇧');
   }
 }
 
