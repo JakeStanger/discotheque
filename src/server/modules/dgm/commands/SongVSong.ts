@@ -1,6 +1,6 @@
 import Command from '../../../utils/Command';
 import ICommandDefinition from '../../../utils/ICommandDefinition';
-import { Message } from 'discord.js';
+import { Message, TextChannel } from 'discord.js';
 import Module from '../../../utils/Module';
 import DiscordUtils from '../../../discord/DiscordUtils';
 import { shuffle } from 'lodash';
@@ -19,7 +19,7 @@ class SongVSong extends Command {
     };
   }
 
-  public async run(message: Message, ...args: string[]): Promise<void> {
+  public static async run(channel: TextChannel) {
     const tracks = await fetch(`${process.env.DGM_DATABASE_URL}/track`)
       .then(r => r.json())
       .then(r => r.data);
@@ -52,7 +52,7 @@ class SongVSong extends Command {
       .then(r => r.json())
       .then(r => r.data);
 
-    const embedMessage = await DiscordUtils.sendEmbed(message.channel, {
+    const embedMessage = await DiscordUtils.sendEmbed(channel, {
       fields: [
         {
           name: `:regional_indicator_a: ${track1.name}`,
@@ -67,6 +67,10 @@ class SongVSong extends Command {
 
     await embedMessage.react('🇦');
     await embedMessage.react('🇧');
+  }
+
+  public async run(message: Message, ...args: string[]): Promise<void> {
+    await SongVSong.run(message.channel as TextChannel);
   }
 }
 
