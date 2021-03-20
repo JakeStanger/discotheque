@@ -29,7 +29,10 @@ class ClientManager extends Logger {
    */
   public static getClientForGuild(guildId: string) {
     return ClientManager.clients.find(c =>
-      c.getDiscordClient().guilds.fetch(guildId)
+      c
+        .getDiscordClient()
+        .guilds.fetch(guildId)
+        .catch()
     );
   }
 }
