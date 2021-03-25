@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["createMany"]
+}
+
+model Client {
+  id    String @id @default(uuid())
+  name  String @unique
+  token Bytes?
+
+  guilds Guild[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Guild {
+  id String @id
+
+  client   Client @relation(fields: [clientId], references: [id])
+  clientId String
+
+  configs    Config[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Config {
+  key     String
+  guild   Guild  @relation(fields: [guildId], references: [id])
+  guildId String
+  value   Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([key, guildId])
+  @@index([key, guildId])
+}
+
+model Message {
+  id  String  @id
+  authorId  String
+  channelId String
+  guildId String
+
+  content String
+  attachments String[]
+
+  timestamp DateTime
+
+  metadata  MessageMetadata[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([id])
+  @@index([authorId, timestamp])
+  @@index([channelId, timestamp])
+}
+
+model MessageMetadata {
+  key     String
+  message   Message  @relation(fields: [messageId], references: [id])
+  messageId String
+  value   Json
+
+  @@id([key, messageId])
+  @@index([key, messageId])
+}
+
+model SyncHistory {
+  date       DateTime @default(now())
+  channelId  String
+  lowerBound String
+  upperBound String
+
+  @@unique([channelId, date])
+}

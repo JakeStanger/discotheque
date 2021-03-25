@@ -1,0 +1,55 @@
+version: '3.2'
+
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./.docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./.docker/nginx-selfsigned.crt:/etc/nginx/server.cert:ro
+      - ./.docker/nginx-selfsigned.key:/etc/nginx/server.key:ro
+      - ./.docker/dhparam.pem:/etc/nginx/dhparam.pem:ro
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - grafana
+      - pgadmin
+    restart: unless-stopped
+
+  postgres:
+    image: postgres
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    env_file:
+      - .env
+    user: '0'
+    volumes:
+      - ./.docker/grafana.ini:/etc/grafana/grafana.ini:ro
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file:
+      - .env
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    links:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  influxdb-data:
+  postgres-data:
+  grafana-data:
+  pgadmin-data:

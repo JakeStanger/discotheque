@@ -1,0 +1,48 @@
+{
+  "name": "discotheque2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node lib",
+    "start:dev": "nodemon",
+    "disco": "node lib/cli.js"
+  },
+  "dependencies": {
+    "@prisma/cli": "2.15.0",
+    "@prisma/client": "^2.18.0",
+    "@soncodi/signal": "^2.0.7",
+    "discord.js": "^12.5.1",
+    "glob": "^7.1.6",
+    "kleur": "^4.1.4",
+    "luxon": "^1.25.0",
+    "node-schedule": "^2.0.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.6",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/glob": "^7.1.3",
+    "@types/luxon": "^1.25.0",
+    "@types/node": "^14.14.14",
+    "@types/node-schedule": "^1.3.1",
+    "@types/nodemon": "^1.19.0",
+    "@types/prettier": "^2.1.5",
+    "@types/sass": "^1.16.0",
+    "@types/yargs": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "prisma": "^2.18.0",
+    "sass": "^1.30.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}

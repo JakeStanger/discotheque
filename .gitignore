@@ -1,0 +1,7 @@
+/node_modules
+.env
+*.log
+/lib/
+
+# for now at least:
+.docker
