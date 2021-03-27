@@ -18,3 +18,17 @@ Yet another general-purpose Discord bot. WIP, of course.
 - Run `yarn disco client add --name <client_name> --token <client_token>` to add a bot client.
   - Clients can be added while the bot is running, but it must be restarted to take effect.
 - Run `yarn start` to start the bot.
+
+## Docker
+
+Fill in the env vars in the below command and run:
+
+```bash
+docker run \
+  -v ./logs:/app/logs \
+  -e 'BOT_OWNER=' \
+  -e 'DATABASE_URL=' \
+  -e 'SECRETS_KEY=' \
+  -e 'DGM_DATABASE_URL=' \
+  jakestanger/discotheque
+```
