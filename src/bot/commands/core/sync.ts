@@ -117,7 +117,7 @@ async function sync(message: Message) {
   const mentionedChannels = message.mentions.channels.array();
 
   const configManager = ConfigManager.get();
-  const logChannels = mentionedChannels
+  const logChannels = mentionedChannels.length
     ? mentionedChannels
     : await configManager
         .getById({
