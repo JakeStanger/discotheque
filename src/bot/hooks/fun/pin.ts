@@ -2,6 +2,7 @@ import { MessageEmbed, MessageReaction, TextChannel } from 'discord.js';
 import { IHookMetadata } from '../../../helper/hooks/IHook';
 import ConfigManager from '../../../manager/ConfigManager';
 import MessageMetadataManager from '../../../manager/MessageMetadataManager';
+import MessageManager from '../../../manager/MessageManager';
 
 async function pin(react: MessageReaction) {
   const PUSHPIN = '%F0%9F%93%8C';
@@ -65,7 +66,7 @@ async function pin(react: MessageReaction) {
         .trim();
 
       const embed = new MessageEmbed()
-        .setAuthor(message.member?.displayName)
+        .setAuthor(message.member?.displayName || message.author.username)
         .setThumbnail(
           message.author.avatarURL({ size: 32 }) ||
             message.author.defaultAvatarURL
@@ -78,6 +79,11 @@ async function pin(react: MessageReaction) {
         .setDescription(description);
 
       await pinChannel.send(embed);
+
+      // use `addMany` to skip if already exists
+      await MessageManager.get().addMany([
+        MessageManager.discordToDatabase(message),
+      ]);
 
       await metadataManager.add({
         key: 'pinned',
