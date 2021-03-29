@@ -45,9 +45,6 @@ async function loadClients() {
         timersHelper.ensureConfig(guild.id),
       ]);
     }
-
-    await discordClient.user.setStatus('online');
-    await discordClient.user.setActivity({ type: 'WATCHING', name: 'you' });
   }
 }
 

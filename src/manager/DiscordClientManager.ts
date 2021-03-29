@@ -35,7 +35,7 @@ class DiscordClientManager extends Logger {
   public async login(client: Client, token: string): Promise<DiscordClient> {
     const discordClient = new DiscordClient({
       partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-      presence: { status: 'dnd', activity: { name: 'loading' } },
+      presence: { status: 'online', activity: { type: 'WATCHING', name: 'you' } },
     });
 
     await discordClient.login(token);
