@@ -1,9 +1,8 @@
 import { Client } from '@prisma/client';
-import { Client as DiscordClient, Guild, Message } from 'discord.js';
+import { Client as DiscordClient, Guild } from 'discord.js';
 import Collection from '@discordjs/collection';
 import Logger from '../utils/logging/LoggerMixin';
 import * as colors from '../utils/logging/colors';
-import MessageManager from './MessageManager';
 import HooksHelper from '../helper/hooks/HooksHelper';
 import ConfigManager from './ConfigManager';
 
@@ -35,7 +34,10 @@ class DiscordClientManager extends Logger {
   public async login(client: Client, token: string): Promise<DiscordClient> {
     const discordClient = new DiscordClient({
       partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
-      presence: { status: 'online', activity: { type: 'WATCHING', name: 'you' } },
+      presence: {
+        status: 'online',
+        activity: { type: 'WATCHING', name: 'you' },
+      },
     });
 
     await discordClient.login(token);
