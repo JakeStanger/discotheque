@@ -64,4 +64,5 @@ export default songVSong;
 export const meta: ICommandMeta = {
   help: 'Picks two random King Crimson songs',
   aliases: ['songvssong', 'trackvtrack', 'trackvstrack'],
+  permission: 'MANAGE_MESSAGES'
 };
