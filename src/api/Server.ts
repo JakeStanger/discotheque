@@ -18,7 +18,7 @@ app.use((req, res, next) => {
     process.env.API_AUTH_TOKEN &&
     req.headers.authorization !== `Bearer ${process.env.API_AUTH_TOKEN}`
   ) {
-    return res.status(400).send('Invalid auth token');
+    return res.status(400).send({ error: 'Invalid auth token' });
   }
 
   next();
