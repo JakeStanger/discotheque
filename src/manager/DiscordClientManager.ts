@@ -1,5 +1,5 @@
 import { Client } from '@prisma/client';
-import { Client as DiscordClient, Guild } from 'discord.js';
+import { Client as DiscordClient, Guild, Intents } from "discord.js";
 import Collection from '@discordjs/collection';
 import Logger from '../utils/logging/LoggerMixin';
 import * as colors from '../utils/logging/colors';
@@ -35,7 +35,7 @@ class DiscordClientManager extends Logger {
     const discordClient = new DiscordClient({
       partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
       ws: {
-        intents: ['GUILD_MEMBERS'],
+        intents: [Intents.NON_PRIVILEGED, 'GUILD_MEMBERS'],
       },
       presence: {
         status: 'online',
