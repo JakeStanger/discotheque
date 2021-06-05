@@ -129,6 +129,10 @@ interface IChannel {
 }
 
 async function getChannel(channel: GuildChannel): Promise<IChannel> {
+  if (channel === null) {
+    return null;
+  }
+
   const retObject: IChannel = {
     id: channel.id,
     name: channel.name,
@@ -155,6 +159,10 @@ interface IMember {
 }
 
 function getMember(member: GuildMember): IMember {
+  if (member === null) {
+    return null;
+  }
+
   return {
     id: member.id,
     guildId: member.guild.id,
