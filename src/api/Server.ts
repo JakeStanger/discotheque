@@ -6,7 +6,7 @@ import { GuildChannel } from 'discord.js';
 const app = express();
 
 export async function init() {
-  const port = process.env.API_PORT;
+  const port = process.env.API_PORT || 4000;
 
   await new Promise<void>((resolve) => app.listen(port, resolve));
 
