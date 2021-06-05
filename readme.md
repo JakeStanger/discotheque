@@ -26,9 +26,10 @@ Fill in the env vars in the below command and run:
 ```bash
 docker run \
   -v ./logs:/app/logs \
-  -e 'BOT_OWNER=' \
+  -e 'BOT_OWNER_ID=' \
   -e 'DATABASE_URL=' \
   -e 'SECRETS_KEY=' \
   -e 'DGM_DATABASE_URL=' \
+  -e 'API_AUTH_TOKEN=' \
   jakestanger/discotheque
 ```
