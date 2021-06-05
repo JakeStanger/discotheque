@@ -16,7 +16,7 @@ export async function init() {
 app.use((req, res, next) => {
   if (
     process.env.API_AUTH_TOKEN &&
-    req.headers.authorization !== `Basic ${process.env.API_AUTH_TOKEN}`
+    req.headers.authorization !== `Bearer ${process.env.API_AUTH_TOKEN}`
   ) {
     return res.status(400).send('Invalid auth token');
   }
