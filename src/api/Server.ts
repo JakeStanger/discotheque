@@ -54,7 +54,7 @@ app.get('/guild/:id/channel/:cid', async (req, res) => {
   const discord = await DiscordClientManager.get().get(guild.clientId);
 
   const channel = await getChannel(
-    await discord.guilds.resolve(guild.id).channels.resolve(req.params.cid)
+    discord.guilds.resolve(guild.id).channels.resolve(req.params.cid)
   );
 
   res.send({ data: channel });
