@@ -1,7 +1,7 @@
 import express from 'express';
 import DiscordClientManager from '../manager/DiscordClientManager';
 import prisma from '../client/prisma';
-import { GuildChannel } from 'discord.js';
+import { GuildChannel, GuildMember } from 'discord.js';
 
 const app = express();
 
@@ -34,6 +34,31 @@ app.get('/guild/:id', async (req, res) => {
   const guild = await prisma.guild.findUnique({ where: { id: req.params.id } });
 
   res.send({ data: guild });
+});
+
+app.get('/guild/:id/member', async (req, res) => {
+  const guild = await prisma.guild.findUnique({ where: { id: req.params.id } });
+
+  const discord = await DiscordClientManager.get().get(guild.clientId);
+
+  const members = await discord.guilds
+    .resolve(req.params.id)
+    .members.fetch()
+    .then((mbrs) => mbrs.map(getMember));
+
+  res.send({ data: members });
+});
+
+app.get('/guild/:id/member/:mid', async (req, res) => {
+  const guild = await prisma.guild.findUnique({ where: { id: req.params.id } });
+
+  const discord = await DiscordClientManager.get().get(guild.clientId);
+
+  const member = getMember(
+    await discord.guilds.resolve(req.params.id).members.fetch(req.params.mid)
+  );
+
+  res.send({ data: member });
 });
 
 app.get('/guild/:id/channel', async (req, res) => {
@@ -116,4 +141,24 @@ async function getChannel(channel: GuildChannel): Promise<IChannel> {
   }
 
   return retObject;
+}
+
+interface IMember {
+  id: string;
+  guildId: string;
+  displayName: string;
+  color: string;
+  username: string;
+  avatarUrl: string;
+}
+
+function getMember(member: GuildMember): IMember {
+  return {
+    id: member.id,
+    guildId: member.guild.id,
+    color: member.displayHexColor,
+    displayName: member.displayName,
+    username: member.user.username,
+    avatarUrl: member.user.displayAvatarURL(),
+  };
 }
