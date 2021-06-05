@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import DiscordClientManager from '../manager/DiscordClientManager';
 import prisma from '../client/prisma';
 import { GuildChannel, GuildMember } from 'discord.js';
 
 const app = express();
+app.use(cors());
 
 export async function init() {
   const port = process.env.API_PORT || 4000;
@@ -18,7 +20,7 @@ app.use((req, res, next) => {
     process.env.API_AUTH_TOKEN &&
     req.headers.authorization !== `Bearer ${process.env.API_AUTH_TOKEN}`
   ) {
-    return res.status(400).send({ error: 'Invalid auth token' });
+    return res.status(401).send({ error: 'Invalid auth token' });
   }
 
   next();
