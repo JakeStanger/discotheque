@@ -7,6 +7,8 @@ import CommandsHelper from './helper/commands/CommandsHelper';
 import { log } from './utils/logging/logger';
 import HooksHelper from './helper/hooks/HooksHelper';
 import TimersHelper from './helper/timers/TimersHelper';
+import * as APIServer from './api/Server';
+import prisma from './client/prisma';
 
 const secretsHelper = SecretsHelper.get();
 
@@ -59,10 +61,14 @@ async function init() {
 
   await timersHelper.startTimers();
 
+  await APIServer.init();
+
   log('Main', 'info', 'Load complete');
 }
 
 init().catch((e) => {
   log('Main', 'error', e.message);
+
+  prisma.$disconnect();
   process.exit(1);
 });
