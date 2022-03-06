@@ -55,7 +55,7 @@ app.get('/guild/:id/member', async (req, res) => {
 app.get('/guild/:id/member/:mid', async (req, res) => {
   const guild = await prisma.guild.findUnique({ where: { id: req.params.id } });
 
-  const discord = await DiscordClientManager.get().get(guild.clientId);
+  const discord = DiscordClientManager.get().get(guild.clientId);
 
   const member = getMember(
     await discord.guilds.resolve(req.params.id).members.fetch(req.params.mid)
