@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import DiscordClientManager from '../manager/DiscordClientManager';
 import prisma from '../client/prisma';
+import { Prisma } from '@prisma/client';
 import { GuildChannel, GuildMember } from 'discord.js';
 
 const app = express();
@@ -94,8 +95,21 @@ app.get('/guild/:id/channel/:cid/message', async (req, res) => {
 
   const skip = parseInt(req.query.$skip as string) || 0;
 
+  const filter: Prisma.MessageWhereInput = req.query.$filter
+    ? (() => {
+        // eg ?$filter=content startsWith Wordle
+        const [, field, operator, operand] = /(\w+) (\w+) (.*)/.exec(
+          req.query.$filter as string
+        );
+
+        return {
+          [field]: { [operator]: operand },
+        };
+      })()
+    : {};
+
   const messages = await prisma.message.findMany({
-    where: { guildId: req.params.id, channelId: req.params.cid },
+    where: { ...filter, guildId: req.params.id, channelId: req.params.cid },
     orderBy: { timestamp: 'desc' },
     take: top,
     skip,
