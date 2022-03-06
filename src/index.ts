@@ -27,10 +27,13 @@ async function loadClients() {
     const token = secretsHelper.decrypt(client.token);
     const discordClient = await discordClientManager.login(client, token);
 
+    // pre-fetch some required data
     const partialGuilds = discordClient.guilds.cache;
     const guilds = await Promise.all(
       partialGuilds.map((guild) => guild.fetch())
     );
+
+    await Promise.all(guilds.map((guild) => guild.members.fetch()));
 
     // ensure base configuration exists for each guild
     for (const guild of guilds) {
