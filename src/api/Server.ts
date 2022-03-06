@@ -116,7 +116,7 @@ app.get('/guild/:id/channel/:cid/message', async (req, res) => {
   });
 
   const aggregate = await prisma.message.aggregate({
-    where: { channelId: req.params.cid },
+    where: { ...filter, guildId: req.params.id, channelId: req.params.cid },
     count: true,
   });
 
