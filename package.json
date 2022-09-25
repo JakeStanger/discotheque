@@ -10,7 +10,7 @@
     "disco": "node lib/cli.js"
   },
   "dependencies": {
-    "@prisma/client": "^2.24.1",
+    "@prisma/client": "^4.3.1",
     "@soncodi/signal": "^2.0.7",
     "cors": "^2.8.5",
     "discord.js": "^12.5.1",
@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^3.3.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1",
-    "prisma": "^2.24.1",
+    "prisma": "^4.3.1",
     "sass": "^1.30.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"

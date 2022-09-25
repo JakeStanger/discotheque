@@ -117,7 +117,7 @@ app.get('/guild/:id/channel/:cid/message', async (req, res) => {
 
   const aggregate = await prisma.message.aggregate({
     where: { ...filter, guildId: req.params.id, channelId: req.params.cid },
-    count: true,
+    _count: true,
   });
 
   res.send({ data: messages, aggregate });
@@ -138,7 +138,7 @@ interface IChannel {
   name: string;
   type: Exclude<keyof typeof ChannelType, 'dm' | 'group' | 'unknown'>;
   messages?: {
-    count: number;
+    _count: number;
   };
 }
 
@@ -156,7 +156,7 @@ async function getChannel(channel: GuildChannel): Promise<IChannel> {
   if (channel.type === 'text') {
     retObject.messages = await prisma.message.aggregate({
       where: { channelId: channel.id },
-      count: true,
+      _count: true,
     });
   }
 
