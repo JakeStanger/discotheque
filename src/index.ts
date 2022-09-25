@@ -70,7 +70,7 @@ async function init() {
 }
 
 init().catch((e) => {
-  log('Main', 'error', e.message);
+  log('Main', 'error', e.message, e.stackTrace);
 
   prisma.$disconnect();
   process.exit(1);

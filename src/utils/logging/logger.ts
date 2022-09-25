@@ -52,7 +52,7 @@ export function log(
   }
 
   const messageJoined = message
-    .map((m) => (typeof m === 'object' ? JSON.stringify(m) : m.toString()))
+    .map((m) => (typeof m === 'object' ? JSON.stringify(m) : m?.toString()))
     .join(' ');
 
   logger.log({
