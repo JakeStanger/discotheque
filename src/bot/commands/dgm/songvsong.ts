@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 export async function run(channel: TextChannel) {
   const tracks = await fetch(`${process.env.DGM_DATABASE_URL}/track`)
     .then((r) => r.json())
-    .then((r) => r.data);
+    .then((r: { data: any }) => r.data);
 
   let tracksShuffled = shuffle(tracks);
 
@@ -14,7 +14,7 @@ export async function run(channel: TextChannel) {
     `${process.env.DGM_DATABASE_URL}/track/${tracksShuffled[0].id}`
   )
     .then((r) => r.json())
-    .then((r) => r.data);
+    .then((r: { data: any }) => r.data);
 
   // Stop some tracks from being matched against others
   if (
@@ -34,7 +34,7 @@ export async function run(channel: TextChannel) {
     `${process.env.DGM_DATABASE_URL}/track/${tracksShuffled[1].id}`
   )
     .then((r) => r.json())
-    .then((r) => r.data);
+    .then((r: { data: any }) => r.data);
 
   const embedMessage = await channel.send({
     embed: {
@@ -64,5 +64,5 @@ export default songVSong;
 export const meta: ICommandMeta = {
   help: 'Picks two random King Crimson songs',
   aliases: ['songvssong', 'trackvtrack', 'trackvstrack'],
-  permission: 'MANAGE_MESSAGES'
+  permission: 'MANAGE_MESSAGES',
 };
