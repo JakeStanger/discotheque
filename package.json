@@ -10,14 +10,15 @@
     "disco": "node lib/cli.js"
   },
   "dependencies": {
-    "@prisma/client": "^4.3.1",
+    "@prisma/client": "^5.11.0",
     "@soncodi/signal": "^2.0.7",
     "cors": "^2.8.5",
     "discord.js": "^12.5.1",
     "express": "^5.0.0-beta.1",
     "glob": "^7.1.6",
+    "jsdom": "^24.0.0",
     "kleur": "^4.1.4",
-    "luxon": "^1.25.0",
+    "luxon": "^3.4.4",
     "node-schedule": "^2.0.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0",
@@ -29,8 +30,9 @@
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/express": "^4.17.12",
     "@types/glob": "^7.1.3",
+    "@types/jsdom": "^21.1.6",
     "@types/luxon": "^1.25.0",
-    "@types/node": "^14.14.14",
+    "@types/node": "^20.11.28",
     "@types/node-schedule": "^1.3.1",
     "@types/nodemon": "^1.19.0",
     "@types/prettier": "^2.1.5",
@@ -43,9 +45,9 @@
     "eslint-plugin-prettier": "^3.3.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1",
-    "prisma": "^4.3.1",
+    "prisma": "^5.11.0",
     "sass": "^1.30.0",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
   }
 }
