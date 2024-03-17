@@ -24,7 +24,7 @@ export async function bins(guild: Guild) {
     const channel = (await guild.channels.resolve(channelId)) as TextChannel;
     const dates = await getDates(url);
 
-    if(dates.generalDate.diffNow('days').as('days') < 1.5) {
+    if(isTomorrow(dates.generalDate)) {
       await channel.send({
         embed: {
           title: ':wastebasket: General waste tomorrow',
@@ -33,7 +33,7 @@ export async function bins(guild: Guild) {
       });
     }
 
-    if(dates.recyclingDate.diffNow('days').as('days') < 1.5) {
+    if(isTomorrow(dates.recyclingDate)) {
       await channel.send({
         embed: {
           title: ':recycle: Recycling tomorrow',
@@ -42,7 +42,7 @@ export async function bins(guild: Guild) {
       });
     }
 
-    if(dates.gardenDate.diffNow('days').as('days') < 1.5) {
+    if(isTomorrow(dates.gardenDate)) {
       await channel.send({
         embed: {
           title: ':leaves: Garden waste tomorrow',
@@ -51,7 +51,7 @@ export async function bins(guild: Guild) {
       });
     }
 
-    if(dates.foodDate.diffNow('days').as('days') < 1.5) {
+    if(isTomorrow(dates.foodDate)) {
       await channel.send({
         embed: {
           title: ':meat_on_bone: Food waste tomorrow',
@@ -60,6 +60,10 @@ export async function bins(guild: Guild) {
       });
     }
   }
+}
+
+function isTomorrow(date: DateTime) {
+  return date.minus({days: 1}).day === DateTime.local().day;
 }
 
 export default bins;
