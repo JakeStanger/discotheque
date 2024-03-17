@@ -26,7 +26,7 @@ class MessageMetadataManager
   }
 
   public async getAll(
-    where?: Prisma.ConfigWhereInput
+    where?: Prisma.MessageMetadataWhereInput
   ): Promise<MessageMetadata[]> {
     return prisma.messageMetadata.findMany({ where });
   }

@@ -24,7 +24,7 @@ async function chain(message: Message) {
       key: 'hook.fun.chain.trigger',
       guildId: message.guild.id,
     })
-    .then((c) => c.value);
+    .then((c) => c.value as number);
 
   if (messageChain.length >= trigger) {
     await message.channel.send(message.content);

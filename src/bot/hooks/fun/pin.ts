@@ -28,7 +28,7 @@ async function pin(react: MessageReaction) {
       key: 'hook.fun.pin.count',
       guildId: message.guild.id,
     })
-    .then((c) => c.value);
+    .then((c) => c.value as number);
 
   if (react.partial) {
     react = await react.fetch();
