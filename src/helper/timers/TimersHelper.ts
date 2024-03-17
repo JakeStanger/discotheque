@@ -76,6 +76,26 @@ class TimersHelper extends ActionHelper<ITimer> {
   public getAll(): ITimer[] {
     return this.actions.array();
   }
+
+  public async run(name: string, guildId: string) {
+    const guildConfig = await GuildManager.get().getById(guildId);
+    if(!guildId) return;
+
+    const client = DiscordClientManager.get().get(guildConfig.clientId);
+    if(!client) return;
+
+    const guild = await client.guilds.fetch(guildConfig.id);
+    if(!guild) return;
+
+    const timer = this.actions.find((t) => t.name == name);
+    if (timer) {
+      this.log(
+        `[${colors.action(`${timer.module}/${timer.name}`)}] Executing timer (manually triggered)`
+      );
+
+      timer.exec(guild);
+    }
+  }
 }
 
 export default TimersHelper;

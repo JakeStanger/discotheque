@@ -4,6 +4,7 @@ import DiscordClientManager from '../manager/DiscordClientManager';
 import prisma from '../client/prisma';
 import { Prisma } from '@prisma/client';
 import { GuildChannel, GuildMember } from 'discord.js';
+import TimersHelper from "../helper/timers/TimersHelper";
 
 const app = express();
 app.use(cors());
@@ -131,6 +132,11 @@ app.get('/guild/:id/channel/:cid/message/:mid', async (req, res) => {
   });
 
   res.send({ data: messages });
+});
+
+app.post('/guild/:id/timer/:name', async(req, res) => {
+  await TimersHelper.get().run(req.params.name, req.params.id);
+  res.send();
 });
 
 interface IChannel {
