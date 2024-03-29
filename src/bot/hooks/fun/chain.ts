@@ -5,6 +5,8 @@ import ConfigManager from '../../../manager/ConfigManager';
 let messageChain: Message[] = [];
 
 async function chain(message: Message) {
+  if(!message.content) return;
+
   const lastInChain = messageChain[messageChain.length - 1];
   if (
     !lastInChain ||
