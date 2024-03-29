@@ -1,9 +1,9 @@
-import { Guild, TextChannel } from "discord.js";
-import ConfigManager from "../../../manager/ConfigManager";
-import { ITimerMetadata } from "../../../helper/timers/ITimer";
-import { JSDOM } from "jsdom";
-import { DateTime } from "luxon";
-import { getDates } from "../../commands/home/bins";
+import { Guild, TextChannel } from 'discord.js';
+import ConfigManager from '../../../manager/ConfigManager';
+import { ITimerMetadata } from '../../../helper/timers/ITimer';
+import { JSDOM } from 'jsdom';
+import { DateTime } from 'luxon';
+import { getDates } from '../../commands/home/bins';
 
 export async function bins(guild: Guild) {
   const configManager = ConfigManager.get();
@@ -15,55 +15,59 @@ export async function bins(guild: Guild) {
     })
     .then((c) => c.value as string);
 
-  const url = await configManager.getById({
-    guildId: guild.id,
-    key: 'timer.home.bins.url'
-  }).then(c => c.value as string);
+  const url = await configManager
+    .getById({
+      guildId: guild.id,
+      key: 'timer.home.bins.url',
+    })
+    .then((c) => c.value as string);
 
-  if(channelId && url) {
-    const channel = (await guild.channels.resolve(channelId)) as TextChannel;
+  if (channelId && url) {
+    const channel = (guild.channels.resolve(channelId) ??
+      (await guild.client.channels.fetch(channelId))) as TextChannel;
+
     const dates = await getDates(url);
 
-    if(isTomorrow(dates.generalDate)) {
+    if (isTomorrow(dates.generalDate)) {
       await channel.send({
         embed: {
           title: ':wastebasket: General waste tomorrow',
-          color: '#000000'
-        }
+          color: '#000000',
+        },
       });
     }
 
-    if(isTomorrow(dates.recyclingDate)) {
+    if (isTomorrow(dates.recyclingDate)) {
       await channel.send({
         embed: {
           title: ':recycle: Recycling tomorrow',
-          color: '#1c7db5'
-        }
+          color: '#1c7db5',
+        },
       });
     }
 
-    if(isTomorrow(dates.gardenDate)) {
+    if (isTomorrow(dates.gardenDate)) {
       await channel.send({
         embed: {
           title: ':leaves: Garden waste tomorrow',
-          color: '#468300'
-        }
+          color: '#468300',
+        },
       });
     }
 
-    if(isTomorrow(dates.foodDate)) {
+    if (isTomorrow(dates.foodDate)) {
       await channel.send({
         embed: {
           title: ':meat_on_bone: Food waste tomorrow',
-          color: '#585858'
-        }
+          color: '#585858',
+        },
       });
     }
   }
 }
 
 function isTomorrow(date: DateTime) {
-  return date.minus({days: 1}).day === DateTime.local().day;
+  return date.minus({ days: 1 }).day === DateTime.local().day;
 }
 
 export default bins;
@@ -73,5 +77,6 @@ export const meta: ITimerMetadata = {
   help: 'Runs the bin checker daily',
   ensureConfig: {
     channel: '',
+    url: '',
   },
 };
